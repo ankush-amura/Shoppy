@@ -9,12 +9,12 @@ end
 
   describe "#create" do
     subject{
-       post :create,
+        post :create,
         params:{superadmin:{name:"Jackson",email: "jackson@123",contact:"9175454577",password:"9175454577"}}
       }
-     it "redirects to the index page" do
-       expect(subject).to redirect_to action: "index"
+    it "redirects to the index page" do
+         expect(subject).to redirect_to action: "index"
     end
-end
+   end
 
 end

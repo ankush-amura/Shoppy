@@ -2,7 +2,7 @@ require 'rails_helper.rb'
 RSpec.describe ModeratorsController,type: :controller do
   describe "GET index" do
   it "has a 200 status code" do
-    get :index
+   get :index
     expect(response.status).to eq(200)
   end
 end
@@ -14,12 +14,12 @@ end
       }
      it "redirects to the index page" do
        expect(subject).to redirect_to controller: "superadmins",action: "index"
-    end
-   end
+     end
+ end
 
-  describe "delsale" do
+ describe "delsale" do
     subject{post :delsale, params:{id: '1'}}
-    it "selects a sale person to be deleted" do
+      it "selects a sale person to be deleted" do
       expect(subject).to redirect_to controller: "moderators" ,action: "delsale"
     end
   end
