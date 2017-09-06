@@ -55,6 +55,14 @@ ActiveRecord::Schema.define(version: 20170901064038) do
     t.index ["superadmin_id"], name: "index_moderators_on_superadmin_id"
   end
 
+  create_table "replies", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.string "reply"
+    t.bigint "review_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["review_id"], name: "index_replies_on_review_id"
+  end
+
   create_table "reviews", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string "message"
     t.string "role"
