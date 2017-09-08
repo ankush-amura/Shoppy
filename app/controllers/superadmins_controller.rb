@@ -19,9 +19,11 @@ end
      #displays session variable onto the console
      puts session[:current_user_id]
      # here we get the superadmin of the particular id
-     @superadmin=Superadmin.first
+     @superadmin=current_user
      # we get moderators that belongs to that superadmins
      @moderators= @superadmin.moderators
+
+     @mod_uassign = User.where(role: "Moderator",superadmin_id:"")
   end
 
 

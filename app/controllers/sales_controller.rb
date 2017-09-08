@@ -35,8 +35,7 @@ end
 
 
   def index
-  session[:current_sales_person_id]=1
-  @sale=Sale.find(session[:current_sales_person_id])
+  @sale=current_user
   @shops=@sale.shops
   end
 

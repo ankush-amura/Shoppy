@@ -7,8 +7,8 @@ class ModeratorsController < ApplicationController
 
   def index
     session[:current_moderator_id]=1
-    @moderator=Moderator.find_by_id(session[:current_moderator_id])
     # we get moderators that belongs to that superadmins
+   @moderator=current_user
     @sales= @moderator.sales
     @shops=[]
     @sales.each do |sale|
