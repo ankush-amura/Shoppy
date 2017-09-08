@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get '/superadmins/delmod'
   get '/moderators/delsale'
   resources :moderators

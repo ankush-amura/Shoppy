@@ -1,7 +1,15 @@
-class City < ApplicationRecord
-   # A city can have many areas and each area can have many shops hence this association
-   has_many :areas
+class City
 
-   # A city can have many shops and hence its necessary tomhave this association 
-   has_many :shops, as: :property
+
+  include Mongoid::Document
+  include Mongoid::Timestamps
+
+
+  field :name, type:  String , default: ""
+
+   # A city can have many areas and each area can have many shops hence this association
+  has_many :areas
+
+   # A city can have many shops and hence its necessary tomhave this association
+  has_many :shops
 end
