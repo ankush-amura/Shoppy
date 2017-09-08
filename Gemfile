@@ -6,9 +6,12 @@ git_source(:github) do |repo_name|
 end
 
 
+gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'
 # Use mysql as the database for Active Record
+gem 'mongoid', '~> 6.1.0'
+
 gem 'mysql2', '>= 0.3.18', '< 0.5'
 
 gem "factory_girl_rails", "~> 4.0"

@@ -8024,3 +8024,837 @@ Completed 302 Found in 5ms (ActiveRecord: 0.9ms)
   [1m[36mSuperadmin Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `superadmins` WHERE `superadmins`.`password` IS NULL LIMIT 1[0m
   [1m[36mSuperadmin Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `superadmins` WHERE `superadmins`.`contact` IS NULL LIMIT 1[0m
   [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered customers/index.html.erb within layouts/application (0.3ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 17ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by CustomersController#comment as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShop Load (0.3ms)[0m  [1m[34mSELECT  `shops`.* FROM `shops` WHERE `shops`.`id` = 1 LIMIT 1[0m
+  Rendering customers/comment.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered customers/comment.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 61ms (Views: 1.8ms | ActiveRecord: 1.9ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by CustomersController#reply as HTML
+  Parameters: {"comment_id"=>"1", "reply"=>"Great shop", "shop_id"=>"1"}
+  [1m[36mShop Load (0.2ms)[0m  [1m[34mSELECT  `shops`.* FROM `shops` WHERE `shops`.`id` = 1 LIMIT 1[0m
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  `reviews`.* FROM `reviews` WHERE `reviews`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `reviews` (`message`, `role`, `shop_id`, `comment_id`, `created_at`, `updated_at`) VALUES ('Great shop', 'Reply', 1, 1, '2017-09-07 05:18:05', '2017-09-07 05:18:05')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering customers/index.html.erb within layouts/application
+  Rendered customers/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 539ms (Views: 0.8ms | ActiveRecord: 1.6ms)
+  [1m[35m (36.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by CustomersController#search as HTML
+  Parameters: {"area"=>"Baner", "category"=>"Retail", "city"=>"Kesslerfort", "name"=>"Charley Gutkowski II"}
+  [1m[36mCity Load (0.6ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`name` = 'Kesslerfort' ORDER BY `cities`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 3.7ms)
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by CustomersController#search as HTML
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT `cities`.* FROM `cities`[0m
+  [1m[36mArea Load (0.3ms)[0m  [1m[34mSELECT `areas`.* FROM `areas`[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`role` = 'Category'[0m
+  Rendering customers/search.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered customers/search.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 48ms (Views: 1.2ms | ActiveRecord: 2.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by CustomersController#commented as HTML
+  Parameters: {"comment"=>"very great shop", "shop_id"=>"1"}
+  [1m[36mShop Load (0.1ms)[0m  [1m[34mSELECT  `shops`.* FROM `shops` WHERE `shops`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `reviews` (`message`, `role`, `shop_id`, `created_at`, `updated_at`) VALUES ('very great shop', 'Review', 1, '2017-09-07 05:18:05', '2017-09-07 05:18:05')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering customers/index.html.erb within layouts/application
+  Rendered customers/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 7ms (Views: 0.8ms | ActiveRecord: 0.9ms)
+  [1m[35m (37.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by ModeratorsController#index as HTML
+  [1m[36mModerator Load (0.5ms)[0m  [1m[34mSELECT  `moderators`.* FROM `moderators` WHERE `moderators`.`id` = 1 LIMIT 1[0m
+  [1m[36mSale Load (0.4ms)[0m  [1m[34mSELECT `sales`.* FROM `sales` WHERE `sales`.`moderator_id` = 1[0m
+  [1m[36mShop Load (0.4ms)[0m  [1m[34mSELECT `shops`.* FROM `shops` WHERE `shops`.`sale_id` = 1[0m
+  [1m[36mShop Load (0.3ms)[0m  [1m[34mSELECT `shops`.* FROM `shops` WHERE `shops`.`sale_id` = 2[0m
+  [1m[36mShop Load (0.3ms)[0m  [1m[34mSELECT `shops`.* FROM `shops` WHERE `shops`.`sale_id` = 3[0m
+  Rendering moderators/index.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered moderators/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 59ms (Views: 1.7ms | ActiveRecord: 3.6ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by ModeratorsController#create as HTML
+  Parameters: {"moderator"=>{"contact"=>"9175454577", "email"=>"jackson@123", "name"=>"Jackson", "password"=>"[FILTERED]"}}
+  [1m[36mSuperadmin Load (0.3ms)[0m  [1m[34mSELECT  `superadmins`.* FROM `superadmins` ORDER BY `superadmins`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mModerator Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `moderators` WHERE `moderators`.`password` = BINARY '9175454577' LIMIT 1[0m
+  [1m[36mModerator Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `moderators` WHERE `moderators`.`contact` = BINARY '9175454577' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `moderators` (`name`, `email`, `password`, `contact`, `superadmin_id`, `created_at`, `updated_at`) VALUES ('Jackson', 'jackson@123', '9175454577', '9175454577', 1, '2017-09-07 05:18:05', '2017-09-07 05:18:05')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSuperadmin Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `superadmins` WHERE `superadmins`.`password` = BINARY '1234567891' AND (`superadmins`.`id` != 1) LIMIT 1[0m
+  [1m[36mSuperadmin Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `superadmins` WHERE `superadmins`.`contact` = BINARY '1234567891' AND (`superadmins`.`id` != 1) LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/superadmins
+Completed 302 Found in 25ms (ActiveRecord: 3.2ms)
+  [1m[35m (42.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by ModeratorsController#delsale as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mModerator Load (0.3ms)[0m  [1m[34mSELECT  `moderators`.* FROM `moderators` WHERE `moderators`.`id` = 1 LIMIT 1[0m
+  [1m[36mSale Load (0.2ms)[0m  [1m[34mSELECT  `sales`.* FROM `sales` WHERE `sales`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (9.8ms)[0m  [1m[31mDELETE FROM `sales` WHERE `sales`.`id` = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/moderators/delsale
+Completed 302 Found in 14ms (ActiveRecord: 10.5ms)
+  [1m[35m (38.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Processing by ModeratorsController#approve as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShop Load (0.2ms)[0m  [1m[34mSELECT  `shops`.* FROM `shops` WHERE `shops`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`id` = 1 LIMIT 1[0m
+  [1m[36mArea Load (0.3ms)[0m  [1m[34mSELECT  `areas`.* FROM `areas` WHERE `areas`.`id` = 1 LIMIT 1[0m
+  [1m[36mSale Load (0.3ms)[0m  [1m[34mSELECT  `sales`.* FROM `sales` WHERE `sales`.`id` = 1 LIMIT 1[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE `shops` SET `approve` = 1, `updated_at` = '2017-09-07 05:18:06' WHERE `shops`.`id` = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/moderators
+Completed 302 Found in 16ms (ActiveRecord: 1.9ms)
+  [1m[35m (31.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by ModeratorsController#reject as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShop Load (0.3ms)[0m  [1m[34mSELECT  `shops`.* FROM `shops` WHERE `shops`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`id` = 1 LIMIT 1[0m
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT  `areas`.* FROM `areas` WHERE `areas`.`id` = 1 LIMIT 1[0m
+  [1m[36mSale Load (0.2ms)[0m  [1m[34mSELECT  `sales`.* FROM `sales` WHERE `sales`.`id` = 1 LIMIT 1[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/moderators
+Completed 302 Found in 9ms (ActiveRecord: 1.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by ModeratorsController#remove as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShop Load (0.2ms)[0m  [1m[34mSELECT  `shops`.* FROM `shops` WHERE `shops`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM `shops` WHERE `shops`.`id` = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/moderators
+Completed 302 Found in 2ms (ActiveRecord: 0.6ms)
+  [1m[35m (34.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by SalesController#index as HTML
+  [1m[36mSale Load (0.2ms)[0m  [1m[34mSELECT  `sales`.* FROM `sales` WHERE `sales`.`id` = 1 LIMIT 1[0m
+  Rendering sales/index.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered sales/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by SalesController#create as HTML
+  Parameters: {"sales"=>{"contact"=>"9175454577", "email"=>"jackson@123", "name"=>"Jackson", "password"=>"[FILTERED]"}}
+  [1m[36mModerator Load (0.2ms)[0m  [1m[34mSELECT  `moderators`.* FROM `moderators` WHERE `moderators`.`id` IS NULL LIMIT 1[0m
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by SalesController#newShop as HTML
+  Parameters: {"area"=>"Baner", "category"=>"Retail", "city"=>"Pune", "name"=>"Reebok Showroom"}
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`name` = 'Pune' ORDER BY `cities`.`id` ASC LIMIT 1[0m
+  [1m[36mArea Load (0.3ms)[0m  [1m[34mSELECT  `areas`.* FROM `areas` WHERE `areas`.`name` = 'Baner' ORDER BY `areas`.`id` ASC LIMIT 1[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  `categories`.* FROM `categories` WHERE `categories`.`name` = 'Retail' ORDER BY `categories`.`id` ASC LIMIT 1[0m
+  [1m[36mSale Load (0.1ms)[0m  [1m[34mSELECT  `sales`.* FROM `sales` WHERE `sales`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `shops` (`name`, `city_id`, `area_id`, `sale_id`, `category_id`, `created_at`, `updated_at`) VALUES ('Reebok Showroom', 1, 1, 1, 1, '2017-09-07 05:18:06', '2017-09-07 05:18:06')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/sales
+Completed 302 Found in 18ms (ActiveRecord: 2.4ms)
+  [1m[35m (38.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by SalesController#newShop as HTML
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT `cities`.* FROM `cities`[0m
+  [1m[36mArea Load (0.1ms)[0m  [1m[34mSELECT `areas`.* FROM `areas`[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`role` = 'Category'[0m
+  Rendering sales/newShop.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered sales/newShop.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by SalesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShop Load (0.3ms)[0m  [1m[34mSELECT  `shops`.* FROM `shops` WHERE `shops`.`id` = 1 LIMIT 1[0m
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT `cities`.* FROM `cities`[0m
+  [1m[36mArea Load (0.1ms)[0m  [1m[34mSELECT `areas`.* FROM `areas`[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`role` = 'Category'[0m
+  Rendering sales/update.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered sales/update.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 5ms (Views: 1.7ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by SalesController#edit as HTML
+  Parameters: {"area"=>"Baner", "category"=>"Retail", "city"=>"Pune", "name"=>"Renault Showroom", "shop_id"=>"1"}
+  [1m[36mShop Load (0.2ms)[0m  [1m[34mSELECT  `shops`.* FROM `shops` WHERE `shops`.`id` = 1 ORDER BY `shops`.`id` ASC LIMIT 1[0m
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`name` = 'Pune' ORDER BY `cities`.`id` ASC LIMIT 1[0m
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT  `areas`.* FROM `areas` WHERE `areas`.`name` = 'Baner' ORDER BY `areas`.`id` ASC LIMIT 1[0m
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT  `categories`.* FROM `categories` WHERE `categories`.`name` = 'Retail' AND `categories`.`role` = 'Category' ORDER BY `categories`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT  `areas`.* FROM `areas` WHERE `areas`.`id` = 1 LIMIT 1[0m
+  [1m[36mSale Load (0.1ms)[0m  [1m[34mSELECT  `sales`.* FROM `sales` WHERE `sales`.`id` = 1 LIMIT 1[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE `shops` SET `name` = 'Renault Showroom', `updated_at` = '2017-09-07 05:18:06' WHERE `shops`.`id` = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/sales
+Completed 302 Found in 19ms (ActiveRecord: 2.3ms)
+  [1m[35m (37.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by SalesController#remove as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShop Load (0.3ms)[0m  [1m[34mSELECT  `shops`.* FROM `shops` WHERE `shops`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM `shops` WHERE `shops`.`id` = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/sales
+Completed 302 Found in 3ms (ActiveRecord: 0.7ms)
+  [1m[35m (32.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by SuperadminsController#index as HTML
+  [1m[36mSuperadmin Load (0.1ms)[0m  [1m[34mSELECT  `superadmins`.* FROM `superadmins` ORDER BY `superadmins`.`id` ASC LIMIT 1[0m
+  Rendering superadmins/index.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered superadmins/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by SuperadminsController#create as HTML
+  Parameters: {"superadmin"=>{"contact"=>"9175454577", "email"=>"jackson@123", "name"=>"Jackson", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSuperadmin Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM `superadmins` WHERE `superadmins`.`password` = BINARY '9175454577' LIMIT 1[0m
+  [1m[36mSuperadmin Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `superadmins` WHERE `superadmins`.`contact` = BINARY '9175454577' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `superadmins` (`name`, `email`, `password`, `contact`, `created_at`, `updated_at`) VALUES ('Jackson', 'jackson@123', '9175454577', '9175454577', '2017-09-07 05:18:06', '2017-09-07 05:18:06')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/superadmins
+Completed 302 Found in 8ms (ActiveRecord: 1.5ms)
+  [1m[35m (34.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by SuperadminsController#delmod as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSuperadmin Load (0.2ms)[0m  [1m[34mSELECT  `superadmins`.* FROM `superadmins` ORDER BY `superadmins`.`id` ASC LIMIT 1[0m
+  [1m[36mModerator Load (0.3ms)[0m  [1m[34mSELECT  `moderators`.* FROM `moderators` WHERE `moderators`.`superadmin_id` = 1 AND `moderators`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM `moderators` WHERE `moderators`.`id` = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/superadmins/delmod
+Completed 302 Found in 5ms (ActiveRecord: 1.0ms)
+  [1m[35m (31.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `categories` WHERE `categories`.`name` IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `categories` WHERE `categories`.`name` = BINARY 'Retail' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `categories` WHERE `categories`.`name` IS NULL LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `categories` WHERE `categories`.`name` IS NULL LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mModerator Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `moderators` WHERE `moderators`.`password` IS NULL LIMIT 1[0m
+  [1m[36mModerator Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `moderators` WHERE `moderators`.`contact` IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mModerator Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `moderators` WHERE `moderators`.`password` IS NULL LIMIT 1[0m
+  [1m[36mModerator Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `moderators` WHERE `moderators`.`contact` IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mModerator Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `moderators` WHERE `moderators`.`password` IS NULL LIMIT 1[0m
+  [1m[36mModerator Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `moderators` WHERE `moderators`.`contact` IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mModerator Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `moderators` WHERE `moderators`.`password` IS NULL LIMIT 1[0m
+  [1m[36mModerator Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `moderators` WHERE `moderators`.`contact` IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mModerator Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `moderators` WHERE `moderators`.`password` = BINARY 'johnson123' LIMIT 1[0m
+  [1m[36mModerator Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `moderators` WHERE `moderators`.`contact` = BINARY '976610052' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mModerator Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `moderators` WHERE `moderators`.`password` = BINARY 'johnson123' LIMIT 1[0m
+  [1m[36mModerator Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `moderators` WHERE `moderators`.`contact` = BINARY '976610052' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mModerator Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `moderators` WHERE `moderators`.`password` = BINARY 'johnson123' LIMIT 1[0m
+  [1m[36mModerator Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `moderators` WHERE `moderators`.`contact` IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mModerator Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `moderators` WHERE `moderators`.`password` IS NULL LIMIT 1[0m
+  [1m[36mModerator Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `moderators` WHERE `moderators`.`contact` = BINARY '976610052' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSale Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `sales` WHERE `sales`.`password` = BINARY 'johnson123' LIMIT 1[0m
+  [1m[36mSale Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `sales` WHERE `sales`.`contact` = BINARY '976610052' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSale Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `sales` WHERE `sales`.`password` = BINARY 'johnson123' LIMIT 1[0m
+  [1m[36mSale Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `sales` WHERE `sales`.`contact` = BINARY '976610052' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSale Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `sales` WHERE `sales`.`password` = BINARY 'johnson123' LIMIT 1[0m
+  [1m[36mSale Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `sales` WHERE `sales`.`contact` IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSale Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `sales` WHERE `sales`.`password` IS NULL LIMIT 1[0m
+  [1m[36mSale Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `sales` WHERE `sales`.`contact` = BINARY '976610052' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSale Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `sales` WHERE `sales`.`password` IS NULL LIMIT 1[0m
+  [1m[36mSale Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `sales` WHERE `sales`.`contact` IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSale Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `sales` WHERE `sales`.`password` IS NULL LIMIT 1[0m
+  [1m[36mSale Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `sales` WHERE `sales`.`contact` IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSale Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `sales` WHERE `sales`.`password` IS NULL LIMIT 1[0m
+  [1m[36mSale Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `sales` WHERE `sales`.`contact` IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSale Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM `sales` WHERE `sales`.`password` IS NULL LIMIT 1[0m
+  [1m[36mSale Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `sales` WHERE `sales`.`contact` IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSale Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `sales` WHERE `sales`.`password` = BINARY 'johnson123' LIMIT 1[0m
+  [1m[36mSale Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `sales` WHERE `sales`.`contact` = BINARY '976610052' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSale Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `sales` WHERE `sales`.`password` = BINARY 'johnson123' LIMIT 1[0m
+  [1m[36mSale Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `sales` WHERE `sales`.`contact` = BINARY '976610052' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSale Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `sales` WHERE `sales`.`password` = BINARY 'johnson123' LIMIT 1[0m
+  [1m[36mSale Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `sales` WHERE `sales`.`contact` IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSale Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `sales` WHERE `sales`.`password` IS NULL LIMIT 1[0m
+  [1m[36mSale Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `sales` WHERE `sales`.`contact` = BINARY '976610052' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSuperadmin Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `superadmins` WHERE `superadmins`.`password` IS NULL LIMIT 1[0m
+  [1m[36mSuperadmin Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `superadmins` WHERE `superadmins`.`contact` IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSuperadmin Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `superadmins` WHERE `superadmins`.`password` IS NULL LIMIT 1[0m
+  [1m[36mSuperadmin Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `superadmins` WHERE `superadmins`.`contact` IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSuperadmin Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `superadmins` WHERE `superadmins`.`password` IS NULL LIMIT 1[0m
+  [1m[36mSuperadmin Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `superadmins` WHERE `superadmins`.`contact` IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSuperadmin Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `superadmins` WHERE `superadmins`.`password` IS NULL LIMIT 1[0m
+  [1m[36mSuperadmin Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `superadmins` WHERE `superadmins`.`contact` IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by CustomersController#index as HTML
+  Rendering customers/index.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered customers/index.html.erb within layouts/application (0.3ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by CustomersController#comment as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShop Load (0.3ms)[0m  [1m[34mSELECT  `shops`.* FROM `shops` WHERE `shops`.`id` = 1 LIMIT 1[0m
+  Rendering customers/comment.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered customers/comment.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 40ms (Views: 2.6ms | ActiveRecord: 2.1ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by CustomersController#reply as HTML
+  Parameters: {"comment_id"=>"1", "reply"=>"Great shop", "shop_id"=>"1"}
+  [1m[36mShop Load (0.2ms)[0m  [1m[34mSELECT  `shops`.* FROM `shops` WHERE `shops`.`id` = 1 LIMIT 1[0m
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  `reviews`.* FROM `reviews` WHERE `reviews`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `reviews` (`message`, `role`, `shop_id`, `comment_id`, `created_at`, `updated_at`) VALUES ('Great shop', 'Reply', 1, 1, '2017-09-07 05:19:59', '2017-09-07 05:19:59')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering customers/index.html.erb within layouts/application
+  Rendered customers/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 602ms (Views: 0.8ms | ActiveRecord: 1.7ms)
+  [1m[35m (37.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by CustomersController#search as HTML
+  Parameters: {"area"=>"Baner", "category"=>"Retail", "city"=>"Trompmouth", "name"=>"Litzy Champlin"}
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`name` = 'Trompmouth' ORDER BY `cities`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 2.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by CustomersController#search as HTML
+  [1m[36mCity Load (0.3ms)[0m  [1m[34mSELECT `cities`.* FROM `cities`[0m
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT `areas`.* FROM `areas`[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`role` = 'Category'[0m
+  Rendering customers/search.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered customers/search.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 22ms (Views: 1.0ms | ActiveRecord: 1.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by CustomersController#commented as HTML
+  Parameters: {"comment"=>"very great shop", "shop_id"=>"1"}
+  [1m[36mShop Load (0.2ms)[0m  [1m[34mSELECT  `shops`.* FROM `shops` WHERE `shops`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `reviews` (`message`, `role`, `shop_id`, `created_at`, `updated_at`) VALUES ('very great shop', 'Review', 1, '2017-09-07 05:19:59', '2017-09-07 05:19:59')[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  Rendering customers/index.html.erb within layouts/application
+  Rendered customers/index.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 9ms (Views: 1.8ms | ActiveRecord: 1.1ms)
+  [1m[35m (34.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by ModeratorsController#index as HTML
+  [1m[36mModerator Load (0.3ms)[0m  [1m[34mSELECT  `moderators`.* FROM `moderators` WHERE `moderators`.`id` = 1 LIMIT 1[0m
+  [1m[36mSale Load (0.3ms)[0m  [1m[34mSELECT `sales`.* FROM `sales` WHERE `sales`.`moderator_id` = 1[0m
+  [1m[36mShop Load (0.4ms)[0m  [1m[34mSELECT `shops`.* FROM `shops` WHERE `shops`.`sale_id` = 1[0m
+  [1m[36mShop Load (0.3ms)[0m  [1m[34mSELECT `shops`.* FROM `shops` WHERE `shops`.`sale_id` = 2[0m
+  [1m[36mShop Load (0.2ms)[0m  [1m[34mSELECT `shops`.* FROM `shops` WHERE `shops`.`sale_id` = 3[0m
+  Rendering moderators/index.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered moderators/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 37ms (Views: 1.9ms | ActiveRecord: 3.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by ModeratorsController#create as HTML
+  Parameters: {"moderator"=>{"contact"=>"9175454577", "email"=>"jackson@123", "name"=>"Jackson", "password"=>"[FILTERED]"}}
+  [1m[36mSuperadmin Load (0.1ms)[0m  [1m[34mSELECT  `superadmins`.* FROM `superadmins` ORDER BY `superadmins`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mModerator Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `moderators` WHERE `moderators`.`password` = BINARY '9175454577' LIMIT 1[0m
+  [1m[36mModerator Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `moderators` WHERE `moderators`.`contact` = BINARY '9175454577' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `moderators` (`name`, `email`, `password`, `contact`, `superadmin_id`, `created_at`, `updated_at`) VALUES ('Jackson', 'jackson@123', '9175454577', '9175454577', 1, '2017-09-07 05:19:59', '2017-09-07 05:19:59')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSuperadmin Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `superadmins` WHERE `superadmins`.`password` = BINARY '1234567891' AND (`superadmins`.`id` != 1) LIMIT 1[0m
+  [1m[36mSuperadmin Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `superadmins` WHERE `superadmins`.`contact` = BINARY '1234567891' AND (`superadmins`.`id` != 1) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/superadmins
+Completed 302 Found in 28ms (ActiveRecord: 2.9ms)
+  [1m[35m (28.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+Processing by ModeratorsController#delsale as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mModerator Load (0.4ms)[0m  [1m[34mSELECT  `moderators`.* FROM `moderators` WHERE `moderators`.`id` = 1 LIMIT 1[0m
+  [1m[36mSale Load (0.3ms)[0m  [1m[34mSELECT  `sales`.* FROM `sales` WHERE `sales`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM `sales` WHERE `sales`.`id` = 1[0m
+  [1m[35m (0.6ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/moderators/delsale
+Completed 302 Found in 6ms (ActiveRecord: 1.6ms)
+  [1m[35m (32.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by ModeratorsController#approve as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShop Load (0.2ms)[0m  [1m[34mSELECT  `shops`.* FROM `shops` WHERE `shops`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`id` = 1 LIMIT 1[0m
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT  `areas`.* FROM `areas` WHERE `areas`.`id` = 1 LIMIT 1[0m
+  [1m[36mSale Load (0.3ms)[0m  [1m[34mSELECT  `sales`.* FROM `sales` WHERE `sales`.`id` = 1 LIMIT 1[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE `shops` SET `approve` = 1, `updated_at` = '2017-09-07 05:19:59' WHERE `shops`.`id` = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/moderators
+Completed 302 Found in 18ms (ActiveRecord: 1.6ms)
+  [1m[35m (32.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Processing by ModeratorsController#reject as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShop Load (0.4ms)[0m  [1m[34mSELECT  `shops`.* FROM `shops` WHERE `shops`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`id` = 1 LIMIT 1[0m
+  [1m[36mArea Load (0.2ms)[0m  [1m[34mSELECT  `areas`.* FROM `areas` WHERE `areas`.`id` = 1 LIMIT 1[0m
+  [1m[36mSale Load (0.2ms)[0m  [1m[34mSELECT  `sales`.* FROM `sales` WHERE `sales`.`id` = 1 LIMIT 1[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/moderators
+Completed 302 Found in 14ms (ActiveRecord: 1.3ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+Processing by ModeratorsController#remove as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShop Load (0.1ms)[0m  [1m[34mSELECT  `shops`.* FROM `shops` WHERE `shops`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM `shops` WHERE `shops`.`id` = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/moderators
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+  [1m[35m (30.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+Processing by SalesController#index as HTML
+  [1m[36mSale Load (0.5ms)[0m  [1m[34mSELECT  `sales`.* FROM `sales` WHERE `sales`.`id` = 1 LIMIT 1[0m
+  Rendering sales/index.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered sales/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 5ms (Views: 1.8ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by SalesController#create as HTML
+  Parameters: {"sales"=>{"contact"=>"9175454577", "email"=>"jackson@123", "name"=>"Jackson", "password"=>"[FILTERED]"}}
+  [1m[36mModerator Load (0.3ms)[0m  [1m[34mSELECT  `moderators`.* FROM `moderators` WHERE `moderators`.`id` IS NULL LIMIT 1[0m
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by SalesController#newShop as HTML
+  Parameters: {"area"=>"Baner", "category"=>"Retail", "city"=>"Pune", "name"=>"Reebok Showroom"}
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`name` = 'Pune' ORDER BY `cities`.`id` ASC LIMIT 1[0m
+  [1m[36mArea Load (0.1ms)[0m  [1m[34mSELECT  `areas`.* FROM `areas` WHERE `areas`.`name` = 'Baner' ORDER BY `areas`.`id` ASC LIMIT 1[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  `categories`.* FROM `categories` WHERE `categories`.`name` = 'Retail' ORDER BY `categories`.`id` ASC LIMIT 1[0m
+  [1m[36mSale Load (0.1ms)[0m  [1m[34mSELECT  `sales`.* FROM `sales` WHERE `sales`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `shops` (`name`, `city_id`, `area_id`, `sale_id`, `category_id`, `created_at`, `updated_at`) VALUES ('Reebok Showroom', 1, 1, 1, 1, '2017-09-07 05:20:00', '2017-09-07 05:20:00')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/sales
+Completed 302 Found in 17ms (ActiveRecord: 1.7ms)
+  [1m[35m (29.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by SalesController#newShop as HTML
+  [1m[36mCity Load (0.5ms)[0m  [1m[34mSELECT `cities`.* FROM `cities`[0m
+  [1m[36mArea Load (0.1ms)[0m  [1m[34mSELECT `areas`.* FROM `areas`[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`role` = 'Category'[0m
+  Rendering sales/newShop.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered sales/newShop.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 6ms (Views: 1.0ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by SalesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShop Load (0.3ms)[0m  [1m[34mSELECT  `shops`.* FROM `shops` WHERE `shops`.`id` = 1 LIMIT 1[0m
+  [1m[36mCity Load (0.1ms)[0m  [1m[34mSELECT `cities`.* FROM `cities`[0m
+  [1m[36mArea Load (0.1ms)[0m  [1m[34mSELECT `areas`.* FROM `areas`[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT `categories`.* FROM `categories` WHERE `categories`.`role` = 'Category'[0m
+  Rendering sales/update.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered sales/update.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 5ms (Views: 1.8ms | ActiveRecord: 0.7ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by SalesController#edit as HTML
+  Parameters: {"area"=>"Baner", "category"=>"Retail", "city"=>"Pune", "name"=>"Renault Showroom", "shop_id"=>"1"}
+  [1m[36mShop Load (0.3ms)[0m  [1m[34mSELECT  `shops`.* FROM `shops` WHERE `shops`.`id` = 1 ORDER BY `shops`.`id` ASC LIMIT 1[0m
+  [1m[36mCity Load (0.2ms)[0m  [1m[34mSELECT  `cities`.* FROM `cities` WHERE `cities`.`name` = 'Pune' ORDER BY `cities`.`id` ASC LIMIT 1[0m
+  [1m[36mArea Load (0.1ms)[0m  [1m[34mSELECT  `areas`.* FROM `areas` WHERE `areas`.`name` = 'Baner' ORDER BY `areas`.`id` ASC LIMIT 1[0m
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT  `categories`.* FROM `categories` WHERE `categories`.`name` = 'Retail' AND `categories`.`role` = 'Category' ORDER BY `categories`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mArea Load (0.3ms)[0m  [1m[34mSELECT  `areas`.* FROM `areas` WHERE `areas`.`id` = 1 LIMIT 1[0m
+  [1m[36mSale Load (0.2ms)[0m  [1m[34mSELECT  `sales`.* FROM `sales` WHERE `sales`.`id` = 1 LIMIT 1[0m
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT  `categories`.* FROM `categories` WHERE `categories`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE `shops` SET `name` = 'Renault Showroom', `updated_at` = '2017-09-07 05:20:00' WHERE `shops`.`id` = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/sales
+Completed 302 Found in 22ms (ActiveRecord: 2.8ms)
+  [1m[35m (28.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+Processing by SalesController#remove as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mShop Load (0.3ms)[0m  [1m[34mSELECT  `shops`.* FROM `shops` WHERE `shops`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM `shops` WHERE `shops`.`id` = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/sales
+Completed 302 Found in 3ms (ActiveRecord: 0.8ms)
+  [1m[35m (28.8ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+Processing by SuperadminsController#index as HTML
+  [1m[36mSuperadmin Load (0.2ms)[0m  [1m[34mSELECT  `superadmins`.* FROM `superadmins` ORDER BY `superadmins`.`id` ASC LIMIT 1[0m
+  Rendering superadmins/index.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered superadmins/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by SuperadminsController#create as HTML
+  Parameters: {"superadmin"=>{"contact"=>"9175454577", "email"=>"jackson@123", "name"=>"Jackson", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mSuperadmin Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `superadmins` WHERE `superadmins`.`password` = BINARY '9175454577' LIMIT 1[0m
+  [1m[36mSuperadmin Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `superadmins` WHERE `superadmins`.`contact` = BINARY '9175454577' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `superadmins` (`name`, `email`, `password`, `contact`, `created_at`, `updated_at`) VALUES ('Jackson', 'jackson@123', '9175454577', '9175454577', '2017-09-07 05:20:00', '2017-09-07 05:20:00')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/superadmins
+Completed 302 Found in 6ms (ActiveRecord: 0.9ms)
+  [1m[35m (34.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+Processing by SuperadminsController#delmod as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSuperadmin Load (0.3ms)[0m  [1m[34mSELECT  `superadmins`.* FROM `superadmins` ORDER BY `superadmins`.`id` ASC LIMIT 1[0m
+  [1m[36mModerator Load (0.3ms)[0m  [1m[34mSELECT  `moderators`.* FROM `moderators` WHERE `moderators`.`superadmin_id` = 1 AND `moderators`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM `moderators` WHERE `moderators`.`id` = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/superadmins/delmod
+Completed 302 Found in 6ms (ActiveRecord: 1.1ms)
+  [1m[35m (34.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `categories` WHERE `categories`.`name` IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `categories` WHERE `categories`.`name` = BINARY 'Retail' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `categories` WHERE `categories`.`name` IS NULL LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCategory Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `categories` WHERE `categories`.`name` IS NULL LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mModerator Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `moderators` WHERE `moderators`.`password` IS NULL LIMIT 1[0m
+  [1m[36mModerator Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `moderators` WHERE `moderators`.`contact` IS NULL LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mModerator Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `moderators` WHERE `moderators`.`password` IS NULL LIMIT 1[0m
+  [1m[36mModerator Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `moderators` WHERE `moderators`.`contact` IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mModerator Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `moderators` WHERE `moderators`.`password` IS NULL LIMIT 1[0m
+  [1m[36mModerator Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `moderators` WHERE `moderators`.`contact` IS NULL LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mModerator Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `moderators` WHERE `moderators`.`password` IS NULL LIMIT 1[0m
+  [1m[36mModerator Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `moderators` WHERE `moderators`.`contact` IS NULL LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mModerator Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `moderators` WHERE `moderators`.`password` = BINARY 'johnson123' LIMIT 1[0m
+  [1m[36mModerator Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `moderators` WHERE `moderators`.`contact` = BINARY '976610052' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mModerator Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `moderators` WHERE `moderators`.`password` = BINARY 'johnson123' LIMIT 1[0m
+  [1m[36mModerator Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `moderators` WHERE `moderators`.`contact` = BINARY '976610052' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mModerator Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `moderators` WHERE `moderators`.`password` = BINARY 'johnson123' LIMIT 1[0m
+  [1m[36mModerator Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `moderators` WHERE `moderators`.`contact` IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mModerator Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `moderators` WHERE `moderators`.`password` IS NULL LIMIT 1[0m
+  [1m[36mModerator Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `moderators` WHERE `moderators`.`contact` = BINARY '976610052' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSale Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `sales` WHERE `sales`.`password` = BINARY 'johnson123' LIMIT 1[0m
+  [1m[36mSale Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `sales` WHERE `sales`.`contact` = BINARY '976610052' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSale Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `sales` WHERE `sales`.`password` = BINARY 'johnson123' LIMIT 1[0m
+  [1m[36mSale Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `sales` WHERE `sales`.`contact` = BINARY '976610052' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSale Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `sales` WHERE `sales`.`password` = BINARY 'johnson123' LIMIT 1[0m
+  [1m[36mSale Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `sales` WHERE `sales`.`contact` IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSale Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `sales` WHERE `sales`.`password` IS NULL LIMIT 1[0m
+  [1m[36mSale Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `sales` WHERE `sales`.`contact` = BINARY '976610052' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSale Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `sales` WHERE `sales`.`password` IS NULL LIMIT 1[0m
+  [1m[36mSale Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `sales` WHERE `sales`.`contact` IS NULL LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSale Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `sales` WHERE `sales`.`password` IS NULL LIMIT 1[0m
+  [1m[36mSale Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `sales` WHERE `sales`.`contact` IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSale Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `sales` WHERE `sales`.`password` IS NULL LIMIT 1[0m
+  [1m[36mSale Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `sales` WHERE `sales`.`contact` IS NULL LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSale Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM `sales` WHERE `sales`.`password` IS NULL LIMIT 1[0m
+  [1m[36mSale Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `sales` WHERE `sales`.`contact` IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSale Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `sales` WHERE `sales`.`password` = BINARY 'johnson123' LIMIT 1[0m
+  [1m[36mSale Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `sales` WHERE `sales`.`contact` = BINARY '976610052' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSale Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `sales` WHERE `sales`.`password` = BINARY 'johnson123' LIMIT 1[0m
+  [1m[36mSale Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM `sales` WHERE `sales`.`contact` = BINARY '976610052' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSale Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `sales` WHERE `sales`.`password` = BINARY 'johnson123' LIMIT 1[0m
+  [1m[36mSale Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `sales` WHERE `sales`.`contact` IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSale Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `sales` WHERE `sales`.`password` IS NULL LIMIT 1[0m
+  [1m[36mSale Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `sales` WHERE `sales`.`contact` = BINARY '976610052' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSuperadmin Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `superadmins` WHERE `superadmins`.`password` IS NULL LIMIT 1[0m
+  [1m[36mSuperadmin Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `superadmins` WHERE `superadmins`.`contact` IS NULL LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSuperadmin Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `superadmins` WHERE `superadmins`.`password` IS NULL LIMIT 1[0m
+  [1m[36mSuperadmin Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `superadmins` WHERE `superadmins`.`contact` IS NULL LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSuperadmin Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `superadmins` WHERE `superadmins`.`password` IS NULL LIMIT 1[0m
+  [1m[36mSuperadmin Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `superadmins` WHERE `superadmins`.`contact` IS NULL LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mSuperadmin Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `superadmins` WHERE `superadmins`.`password` IS NULL LIMIT 1[0m
+  [1m[36mSuperadmin Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM `superadmins` WHERE `superadmins`.`contact` IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m

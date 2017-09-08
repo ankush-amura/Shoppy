@@ -1,119 +1,14 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/amura/Documents/ShopReg/ShopReg/spec/controller/customer_spec.rb": [
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        null,
-        null,
-        null
-      ],
-      "/home/amura/Documents/ShopReg/ShopReg/spec/rails_helper.rb": [
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        null,
-        null,
-        null,
-        1,
-        null,
-        1,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        null
-      ],
-      "/home/amura/Documents/ShopReg/ShopReg/config/environment.rb": [
+      "/home/amura/Documents/Shoppy/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/home/amura/Documents/ShopReg/ShopReg/config/application.rb": [
+      "/home/amura/Documents/Shoppy/config/application.rb": [
         1,
         null,
         1,
@@ -133,12 +28,12 @@
         null,
         null
       ],
-      "/home/amura/Documents/ShopReg/ShopReg/config/boot.rb": [
+      "/home/amura/Documents/Shoppy/config/boot.rb": [
         1,
         null,
         1
       ],
-      "/home/amura/Documents/ShopReg/ShopReg/config/environments/test.rb": [
+      "/home/amura/Documents/Shoppy/config/environments/test.rb": [
         1,
         null,
         null,
@@ -182,7 +77,7 @@
         null,
         null
       ],
-      "/home/amura/Documents/ShopReg/ShopReg/config/initializers/application_controller_renderer.rb": [
+      "/home/amura/Documents/Shoppy/config/initializers/application_controller_renderer.rb": [
         null,
         null,
         null,
@@ -190,7 +85,7 @@
         null,
         null
       ],
-      "/home/amura/Documents/ShopReg/ShopReg/config/initializers/assets.rb": [
+      "/home/amura/Documents/Shoppy/config/initializers/assets.rb": [
         null,
         null,
         null,
@@ -206,7 +101,7 @@
         null,
         null
       ],
-      "/home/amura/Documents/ShopReg/ShopReg/config/initializers/backtrace_silencers.rb": [
+      "/home/amura/Documents/Shoppy/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -215,20 +110,20 @@
         null,
         null
       ],
-      "/home/amura/Documents/ShopReg/ShopReg/config/initializers/cookies_serializer.rb": [
+      "/home/amura/Documents/Shoppy/config/initializers/cookies_serializer.rb": [
         null,
-        null,
-        null,
-        null,
-        1
-      ],
-      "/home/amura/Documents/ShopReg/ShopReg/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
         1
       ],
-      "/home/amura/Documents/ShopReg/ShopReg/config/initializers/inflections.rb": [
+      "/home/amura/Documents/Shoppy/config/initializers/filter_parameter_logging.rb": [
+        null,
+        null,
+        null,
+        1
+      ],
+      "/home/amura/Documents/Shoppy/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -246,13 +141,13 @@
         null,
         null
       ],
-      "/home/amura/Documents/ShopReg/ShopReg/config/initializers/mime_types.rb": [
+      "/home/amura/Documents/Shoppy/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null
       ],
-      "/home/amura/Documents/ShopReg/ShopReg/config/initializers/wrap_parameters.rb": [
+      "/home/amura/Documents/Shoppy/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -268,7 +163,7 @@
         null,
         null
       ],
-      "/home/amura/Documents/ShopReg/ShopReg/config/routes.rb": [
+      "/home/amura/Documents/Shoppy/config/routes.rb": [
         1,
         1,
         1,
@@ -295,32 +190,32 @@
         null,
         null
       ],
-      "/home/amura/Documents/ShopReg/ShopReg/app/helpers/application_helper.rb": [
+      "/home/amura/Documents/Shoppy/app/helpers/application_helper.rb": [
         1,
         null,
         null
       ],
-      "/home/amura/Documents/ShopReg/ShopReg/app/helpers/customer_helper.rb": [
+      "/home/amura/Documents/Shoppy/app/helpers/customer_helper.rb": [
         1,
         null
       ],
-      "/home/amura/Documents/ShopReg/ShopReg/app/helpers/moderators_helper.rb": [
+      "/home/amura/Documents/Shoppy/app/helpers/moderators_helper.rb": [
         1,
         null
       ],
-      "/home/amura/Documents/ShopReg/ShopReg/app/helpers/sales_helper.rb": [
+      "/home/amura/Documents/Shoppy/app/helpers/sales_helper.rb": [
         1,
         null
       ],
-      "/home/amura/Documents/ShopReg/ShopReg/app/helpers/superadmin_helper.rb": [
+      "/home/amura/Documents/Shoppy/app/helpers/superadmin_helper.rb": [
         1,
         null
       ],
-      "/home/amura/Documents/ShopReg/ShopReg/app/helpers/superadmins_helper.rb": [
+      "/home/amura/Documents/Shoppy/app/helpers/superadmins_helper.rb": [
         1,
         null
       ],
-      "/home/amura/Documents/ShopReg/ShopReg/app/controllers/customers_controller.rb": [
+      "/home/amura/Documents/Shoppy/app/controllers/customers_controller.rb": [
         1,
         1,
         null,
@@ -332,21 +227,23 @@
         1,
         1,
         1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
         1,
         null,
         null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
         1,
         1,
         1,
@@ -370,7 +267,6 @@
         1,
         0,
         null,
-        null,
         1,
         1,
         1,
@@ -391,12 +287,12 @@
         null,
         null
       ],
-      "/home/amura/Documents/ShopReg/ShopReg/app/controllers/application_controller.rb": [
+      "/home/amura/Documents/Shoppy/app/controllers/application_controller.rb": [
         1,
         1,
         null
       ],
-      "/home/amura/Documents/ShopReg/ShopReg/spec/controller/moderators_spec.rb": [
+      "/home/amura/Documents/Shoppy/spec/controller/moderators_spec.rb": [
         1,
         1,
         1,
@@ -446,7 +342,7 @@
         null,
         null
       ],
-      "/home/amura/Documents/ShopReg/ShopReg/app/controllers/moderators_controller.rb": [
+      "/home/amura/Documents/Shoppy/app/controllers/moderators_controller.rb": [
         1,
         1,
         null,
@@ -521,7 +417,7 @@
         null,
         null
       ],
-      "/home/amura/Documents/ShopReg/ShopReg/spec/controller/sales_spec.rb": [
+      "/home/amura/Documents/Shoppy/spec/controller/sales_spec.rb": [
         1,
         1,
         1,
@@ -586,7 +482,7 @@
         null,
         null
       ],
-      "/home/amura/Documents/ShopReg/ShopReg/app/controllers/sales_controller.rb": [
+      "/home/amura/Documents/Shoppy/app/controllers/sales_controller.rb": [
         1,
         1,
         null,
@@ -633,8 +529,8 @@
         1,
         1,
         1,
-        1,
-        1,
+        0,
+        0,
         null,
         null,
         1,
@@ -653,8 +549,6 @@
         1,
         1,
         1,
-        null,
-        null,
         null,
         2,
         1,
@@ -682,7 +576,7 @@
         null,
         null
       ],
-      "/home/amura/Documents/ShopReg/ShopReg/spec/controller/superadmin_spec.rb": [
+      "/home/amura/Documents/Shoppy/spec/controller/superadmin_spec.rb": [
         1,
         1,
         1,
@@ -713,7 +607,7 @@
         null,
         null
       ],
-      "/home/amura/Documents/ShopReg/ShopReg/app/controllers/superadmins_controller.rb": [
+      "/home/amura/Documents/Shoppy/app/controllers/superadmins_controller.rb": [
         1,
         1,
         null,
@@ -760,7 +654,7 @@
         null,
         null
       ],
-      "/home/amura/Documents/ShopReg/ShopReg/spec/model/area_spec.rb": [
+      "/home/amura/Documents/Shoppy/spec/model/area_spec.rb": [
         1,
         1,
         1,
@@ -786,7 +680,7 @@
         null,
         null
       ],
-      "/home/amura/Documents/ShopReg/ShopReg/app/models/area.rb": [
+      "/home/amura/Documents/Shoppy/app/models/area.rb": [
         1,
         null,
         null,
@@ -795,12 +689,12 @@
         1,
         null
       ],
-      "/home/amura/Documents/ShopReg/ShopReg/app/models/application_record.rb": [
+      "/home/amura/Documents/Shoppy/app/models/application_record.rb": [
         1,
         1,
         null
       ],
-      "/home/amura/Documents/ShopReg/ShopReg/spec/model/category_spec.rb": [
+      "/home/amura/Documents/Shoppy/spec/model/category_spec.rb": [
         1,
         1,
         1,
@@ -832,7 +726,7 @@
         null,
         null
       ],
-      "/home/amura/Documents/ShopReg/ShopReg/app/models/category.rb": [
+      "/home/amura/Documents/Shoppy/app/models/category.rb": [
         1,
         null,
         null,
@@ -844,7 +738,7 @@
         1,
         null
       ],
-      "/home/amura/Documents/ShopReg/ShopReg/spec/model/city_spec.rb": [
+      "/home/amura/Documents/Shoppy/spec/model/city_spec.rb": [
         1,
         1,
         1,
@@ -870,7 +764,7 @@
         null,
         null
       ],
-      "/home/amura/Documents/ShopReg/ShopReg/app/models/city.rb": [
+      "/home/amura/Documents/Shoppy/app/models/city.rb": [
         1,
         null,
         1,
@@ -880,7 +774,7 @@
         1,
         null
       ],
-      "/home/amura/Documents/ShopReg/ShopReg/spec/model/moderator_spec.rb": [
+      "/home/amura/Documents/Shoppy/spec/model/moderator_spec.rb": [
         1,
         1,
         1,
@@ -921,7 +815,7 @@
         null,
         null
       ],
-      "/home/amura/Documents/ShopReg/ShopReg/app/models/moderator.rb": [
+      "/home/amura/Documents/Shoppy/app/models/moderator.rb": [
         1,
         1,
         null,
@@ -944,14 +838,14 @@
         null,
         1,
         1,
-        2,
-        2,
-        2,
-        2,
+        1,
+        1,
+        1,
+        1,
         null,
         null
       ],
-      "/home/amura/Documents/ShopReg/ShopReg/spec/model/review_spec.rb": [
+      "/home/amura/Documents/Shoppy/spec/model/review_spec.rb": [
         1,
         1,
         1,
@@ -978,7 +872,7 @@
         null,
         null
       ],
-      "/home/amura/Documents/ShopReg/ShopReg/app/models/review.rb": [
+      "/home/amura/Documents/Shoppy/app/models/review.rb": [
         1,
         null,
         null,
@@ -992,7 +886,7 @@
         1,
         null
       ],
-      "/home/amura/Documents/ShopReg/ShopReg/spec/model/sale_spec.rb": [
+      "/home/amura/Documents/Shoppy/spec/model/sale_spec.rb": [
         1,
         1,
         1,
@@ -1033,7 +927,7 @@
         null,
         null
       ],
-      "/home/amura/Documents/ShopReg/ShopReg/app/models/sale.rb": [
+      "/home/amura/Documents/Shoppy/app/models/sale.rb": [
         1,
         null,
         1,
@@ -1061,7 +955,7 @@
         null,
         null
       ],
-      "/home/amura/Documents/ShopReg/ShopReg/spec/model/shop_spec.rb": [
+      "/home/amura/Documents/Shoppy/spec/model/shop_spec.rb": [
         1,
         1,
         1,
@@ -1089,7 +983,7 @@
         null,
         null
       ],
-      "/home/amura/Documents/ShopReg/ShopReg/app/models/shop.rb": [
+      "/home/amura/Documents/Shoppy/app/models/shop.rb": [
         1,
         null,
         null,
@@ -1105,7 +999,7 @@
         null,
         null
       ],
-      "/home/amura/Documents/ShopReg/ShopReg/spec/model/superadmin_spec.rb": [
+      "/home/amura/Documents/Shoppy/spec/model/superadmin_spec.rb": [
         1,
         1,
         1,
@@ -1145,7 +1039,7 @@
         null,
         null
       ],
-      "/home/amura/Documents/ShopReg/ShopReg/app/models/superadmin.rb": [
+      "/home/amura/Documents/Shoppy/app/models/superadmin.rb": [
         1,
         null,
         1,
@@ -1174,6 +1068,6 @@
         null
       ]
     },
-    "timestamp": 1504708763
+    "timestamp": 1504761600
   }
 }
