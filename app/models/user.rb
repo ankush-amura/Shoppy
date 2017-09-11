@@ -42,6 +42,8 @@ class User
    has_many :superadmins,class_name: "User",inverse_of: :nil
    has_many :moderators, class_name: "User",foreign_key: "superadmin_id"
    has_many :sales , class_name: "User",foreign_key: "moderator_id"
+   has_many :customers, class_name:"User",inverse_of: nil
+   has_many :reviews
    has_many :shops
    belongs_to :moderator,class_name: "User" , optional: true
    belongs_to :superadmin,class_name: "User", optional: true

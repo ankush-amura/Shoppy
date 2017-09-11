@@ -24,6 +24,9 @@ class ApplicationController < ActionController::Base
         if(current_user.role == "Sale")
            return sales_url
         end
+        if(current_user.role == "Customer")
+           return customers_url
+        end
    end
 
 end

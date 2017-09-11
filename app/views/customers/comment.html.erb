@@ -48,7 +48,7 @@
   <%= hidden_field_tag  :shop_id , "#{ @shop.id }" %>
 </p>
 <p>
-  <%= hidden_field_tag  :comment_id , "#{ comment.id }" %>
+  <%= hidden_field_tag  :comment_id , comment.id %>
 
 </p>
 <p>
@@ -65,3 +65,13 @@
    <% end %>
 <% end%>
 </fieldset>
+
+<% if user_signed_in? %>
+       <li>
+       <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+       </li>
+     <% else %>
+       <li>
+       <%= link_to('Login', new_user_session_path)  %>
+       </li>
+<% end %>

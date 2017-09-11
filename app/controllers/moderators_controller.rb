@@ -1,5 +1,7 @@
 class ModeratorsController < ApplicationController
+  before_action :authenticate_user!
   def new
+   @sales=User.where(role:"Sale",moderator_id: nil)
   end
 
   def edit
@@ -17,6 +19,12 @@ class ModeratorsController < ApplicationController
       end
   end
 
+  def assign
+     @moderator=current_user
+     @sale=User.find(params[:id])
+     @moderator.sales.push(@sale)
+     redirect_to(controller:"moderators",action:"index")
+  end
   # this action is responsible for running the creation of the new moderator by the superadmin
   def create
    # here moderator object is created with parameters
@@ -43,8 +51,7 @@ end
   # this method is responsible for deleting the sale person
   def delsale
     # getting the moderator responsible for current session sales persons
-    session[:current_moderator_id]=1
-    @moderator=Moderator.find_by_id(session[:current_moderator_id])
+    @moderator=current_user
     # we get salesperson that belongs to that moderator
     @sales = @moderator.sales
     # we see if a delete is pressed bcz on delete pressed we will get id in the link

@@ -33,3 +33,13 @@
 <%= link_to "Search Shop",controller: 'customers' , action: 'search' %>
 </p>
 </fieldset>
+
+<% if user_signed_in? %>
+       <li>
+       <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+       </li>
+     <% else %>
+       <li>
+       <%= link_to('Login', new_user_session_path)  %>
+       </li>
+<% end %>

@@ -1,4 +1,5 @@
 class SalesController < ApplicationController
+  before_action :authenticate_user!
   def new
 
   end
@@ -6,16 +7,18 @@ class SalesController < ApplicationController
 
   def newShop
   if request.post?
-    @shop=Shop.new(name: params[:name])
+     @shop=Shop.new(name: params[:name])
      city=City.where(name: params[:city]).first
      area=Area.where(name: params[:area]).first
      category=Category.where(name: params[:category]).first
-     sale=Sale.find('1')
+     sale=User.find(params[:id])
+     subcategory=Subcategory.where(name: params[:subcategory]).first
      sale.shops.push(@shop)
      city.shops.push(@shop)
      area.shops.push(@shop)
      category.shops.push(@shop)
-    redirect_to(sales_url)
+     subcategory.shops.push(@shop)
+     redirect_to(sales_url)
   end
  if request.get?
    @city_names=[]
@@ -27,16 +30,20 @@ class SalesController < ApplicationController
      @area_names.push(area.name)
    end
    @category_names=[]
-   Category.where(role:'Category').each do |category|
+   Category.each do |category|
       @category_names.push(category.name)
+   end
+
+   @sub_category_names=[]
+   Subcategory.each do |subcategory|
+      @sub_category_names.push(subcategory.name)
    end
  end
 end
 
 
   def index
-  session[:current_sales_person_id]=1
-  @sale=Sale.find(session[:current_sales_person_id])
+  @sale=current_user
   @shops=@sale.shops
   end
 

@@ -22,6 +22,11 @@
 </p>
 
 <p>
+  <%= f.label "Sub category:" %><br><br>
+  <%= select_tag :subcategory, options_for_select(@sub_category_names) %>
+</p>
+
+<p>
   <br>
   <br>
   <%= f.submit "Search for Shop" %>
@@ -29,4 +34,14 @@
 </p>
 
 </fieldset>
+<% end %>
+
+<% if user_signed_in? %>
+       <li>
+       <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+       </li>
+     <% else %>
+       <li>
+       <%= link_to('Login', new_user_session_path)  %>
+       </li>
 <% end %>
