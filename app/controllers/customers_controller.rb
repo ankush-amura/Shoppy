@@ -1,10 +1,13 @@
 class CustomersController < ApplicationController
    before_action :authenticate_user!
-
   def new
   end
   def index
      @shops=Shop.all
+     respond_to do |format|
+        format.json{render json: @shops}
+        format.html{render 'index'}
+     end
    end
 
   def comment

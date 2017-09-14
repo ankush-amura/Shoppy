@@ -64,7 +64,9 @@ end
   end
 
   def approve
-    Shop.update(params[:id],approve: '1')
+    @shop=Shop.where(id:params[:id]).first
+    @shop.approve_status='1'
+    @shop.save
     redirect_to(controller: 'moderators' , action: 'index')
   end
    def remove
@@ -73,7 +75,9 @@ end
      redirect_to(controller: 'moderators' , action: 'index')
    end
    def reject
-     Shop.update(params[:id],approve: '0')
+     @shop=Shop.where(id:params[:id]).first
+     @shop.approve_status='0'
+     @shop.save
      redirect_to(controller: 'moderators' , action: 'index')
    end
 end

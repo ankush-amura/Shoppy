@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   post '/customers/commented'
   get '/customers/reply'
   post '/customers/reply'
-
+  post '/sales/edit'
   resources :moderators
   resources :superadmins
   resources :sales

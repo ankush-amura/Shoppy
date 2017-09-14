@@ -65,7 +65,7 @@ end
     @shop=Shop.where(id:params[:shop_id]).first
     @city=City.where(name:params[:city]).first
     @area=Area.where(name:params[:area]).first
-    @category=Category.where(name:params[:category],role:'Category').first
+    @category=Category.where(name:params[:category]).first
     @city.shops.push(@shop)
     @area.shops.push(@shop)
     @category.shops.push(@shop)
@@ -78,15 +78,22 @@ end
     City.all.each do |city|
     @city_names.push(city.name)
     end
+
     @area_names=[]
     Area.all.each do |area|
     @area_names.push(area.name)
     end
-    @categories=Category.where(role: "Category")
+
+    @categories=Category.all
     @category_names=[]
-     @categories.each do |category|
-     puts category.name
-     @category_names.push(category.name)
+    @categories.each do |category|
+    @category_names.push(category.name)
+    end
+
+    @sub_categories=Subcategory.all
+    @sub_category_names=[]
+    @sub_categories.each do |sub_category|
+    @sub_category_names.push(sub_category.name)
      end
      render('update')
    end

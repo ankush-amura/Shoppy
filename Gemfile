@@ -43,9 +43,15 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+
+end
+
+group :test do
+gem 'mongoid-rspec', github: 'mongoid-rspec/mongoid-rspec'
 end
 
 group :development do
+
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'

@@ -4,10 +4,7 @@ class Shop
   include Mongoid::Timestamps
 
 
-
-
-
-  field :name, type: String,default: ""
+  field :name,           type: String,default: ""
   field :approve_status, type: String , default: '0'
   belongs_to :city
   belongs_to :area

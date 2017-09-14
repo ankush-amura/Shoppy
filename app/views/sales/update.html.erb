@@ -26,6 +26,11 @@
 </p>
 
 <p>
+  <%= f.label "category:" %><br><br>
+  <%= select_tag :sub_category,options_for_select(@sub_category_names) %>
+</p>
+
+<p>
   <br>
   <br>
   <%= f.submit "Submit New Details" %>

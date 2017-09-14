@@ -39,6 +39,12 @@
   <td><%= shop.city.name%> &nbsp&nbsp&nbsp</td>
   <td><%= shop.area.name %> &nbsp&nbsp&nbsp</td>
   <td><%= shop.category.name %> &nbsp&nbsp&nbsp</td>
+
+    <td><% if shop.approve_status=="1" %>
+            <%= "yes" %>
+         <% else %>
+           <%= "no" %>
+         <% end %>  </td>
   <td><%= shop.created_at %>  &nbsp&nbsp&nbsp</td>
   <td><%= shop.updated_at %> &nbsp&nbsp&nbsp</td>
   <td><%= link_to "Approve" , controller: 'moderators' , action: 'approve', id: shop.id %></td>
@@ -60,9 +66,10 @@
 <p align="center">
 <%= link_to "Add Shop Category " , controller: 'moderators' , action: 'delsale' %>
 <br>
+<br>
 <% if user_signed_in? %>
+<%= link_to('Logout', destroy_user_session_path, method: :delete) %>
        <li>
-       <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
        </li>
      <% else %>
        <li>
