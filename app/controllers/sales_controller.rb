@@ -4,6 +4,10 @@ class SalesController < ApplicationController
 
   end
 
+  def show
+    @sale=User.where(id: params[:id]).first
+    format.json {render   json: @sale}
+  end
 
   def newShop
   if request.post?
@@ -20,7 +24,7 @@ class SalesController < ApplicationController
      subcategory.shops.push(@shop)
      redirect_to(sales_url)
   end
- if request.get?
+  if request.get?
    @city_names=[]
    City.all.each do |city|
      @city_names.push(city.name)
@@ -33,18 +37,17 @@ class SalesController < ApplicationController
    Category.each do |category|
       @category_names.push(category.name)
    end
-
    @sub_category_names=[]
    Subcategory.each do |subcategory|
       @sub_category_names.push(subcategory.name)
    end
+  end
  end
-end
 
 
   def index
-  @sale=current_user
-  @shops=@sale.shops
+   @sale=current_user
+   @shops=@sale.shops
   end
 
   def create
@@ -55,6 +58,7 @@ end
       redirect_to(controller: 'moderators' , action: 'index')
     end
   end
+
   def sale_params
     params.require(:sales).permit(:name,:email,:password,:contact)
   end

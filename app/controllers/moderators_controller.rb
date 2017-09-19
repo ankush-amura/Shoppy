@@ -1,11 +1,21 @@
 class ModeratorsController < ApplicationController
   before_action :authenticate_user!
+
   def new
    @sales=User.where(role:"Sale",moderator_id: nil)
   end
 
   def edit
   end
+
+
+  def show
+    respond_to do |format|
+    @sale=Shop.where(id: params[:id]).first
+      format.json {render   json: @sale}
+    end
+  end
+
 
   def index
     @moderator=current_user
@@ -17,6 +27,10 @@ class ModeratorsController < ApplicationController
            @shops.push(shop)
           end
       end
+    respond_to do |format|
+       format.json{render json: @sales}
+       format.html{render 'index'}
+    end
   end
 
   def assign
@@ -69,11 +83,13 @@ end
     @shop.save
     redirect_to(controller: 'moderators' , action: 'index')
   end
-   def remove
+
+  def remove
      @shop=Shop.find(params[:id])
      @shop.destroy
      redirect_to(controller: 'moderators' , action: 'index')
    end
+
    def reject
      @shop=Shop.where(id:params[:id]).first
      @shop.approve_status='0'

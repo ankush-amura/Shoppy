@@ -7,15 +7,19 @@ class SuperadminsController < ApplicationController
   def edit
   end
 
-def delmod
-   @moderators=current_user.moderators
-   if(params[:id])
-   @moderator=User.find(params[:id])
-   @moderator.delete
-   redirect_to controller: "superadmins" ,action:"delmod"
- end
+  def show
+    @superadmin = User.where(id: params[:id]).first
+    format.json {render   json: @superadmin}
+  end
 
-end
+  def delmod
+    @moderators=current_user.moderators
+    if(params[:id])
+     @moderator=User.find(params[:id])
+     @moderator.delete
+     redirect_to controller: "superadmins" ,action:"delmod"
+    end
+  end
   # this page renders the moderators under that superadmin
   def index
      #displays session variable onto the console

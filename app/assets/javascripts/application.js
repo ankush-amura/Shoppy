@@ -12,7 +12,8 @@
 //
 //= require jquery-3.2.1
 //= require underscore
-//= require backbone
+//= require backbone  
+//= require backbone.marionette
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .

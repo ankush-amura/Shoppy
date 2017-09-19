@@ -19,7 +19,7 @@
 </td>
 </tr>
 </table>
-<%= form_for :customer , url: customers_commented_url do |f| %>
+<%= form_for :customer , url: commented_customers_url do |f| %>
 <p>
 
   <%= text_field_tag :comment %>
@@ -40,7 +40,7 @@
     <br>
     <br>
     Comment:   <%= comment.message %>
-<%= form_for :customer , url: customers_reply_url   do |f| %>
+<%= form_for :customer , url: reply_customers_url   do |f| %>
 <p>
   <%= text_field_tag :reply %>
 </p>

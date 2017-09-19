@@ -1,23 +1,33 @@
 class CustomersController < ApplicationController
-   before_action :authenticate_user!
+
+  before_action :authenticate_user!
+
   def new
   end
-  def index
+
+  def show
+    respond_to do |format|
+    @shop=Shop.where(id: params[:id]).first
+    format.json {render json:@shop}
+    end
+  end
+
+ def index
      @shops=Shop.all
      respond_to do |format|
         format.json{render json: @shops}
         format.html{render 'index'}
      end
-   end
+ end
 
-  def comment
-  id=params[:id]
-  @shop=Shop.find(id)
-  @comments=@shop.reviews
-  render('comment')
-  end
+ def comment
+   id=params[:id]
+   @shop=Shop.find(id)
+   @comments=@shop.reviews
+   render('comment')
+ end
 
-def commented
+ def commented
   comment=params[:comment]
   @review=Review.new(message: comment)
   @shop=Shop.where(id: params[:shop_id]).first
@@ -27,11 +37,13 @@ def commented
   current_user.reviews.push(@review)
   @shops=Shop.all
   render('index')
-end
-  def edit
+ end
 
-  end
-  def reply
+ def edit
+
+ end
+
+ def reply
      shop_id=params[:shop_id]
      comment_id=params[:comment_id]
      reply=params[:reply]
@@ -44,9 +56,9 @@ end
      p @reply
      @shops=Shop.all
      render('index')
-  end
+ end
 
-  def search
+ def search
     if request.post?
      city=City.where(name:params[:city])
      area=Area.where(name:params[:area])
@@ -59,23 +71,24 @@ end
       @city=City.all
       @city_names=[]
       @city.each do |city|
-          @city_names.push(city.name)
-      end
-      @area=Area.all
-      @area_names=[]
-      @area.each do |area|
-      @area_names.push(area.name)
-      end
-      @category=Category.all
-      @category_names=[]
-      @category.each do |category|
-      @category_names.push(category.name)
-      end
-      @sub_category=Category.all
-      @sub_category_names=[]
-      @sub_category.each do |sub_category|
-      @sub_category_names.push(sub_category.name)
-      end
+      @city_names.push(city.name)
     end
+    @area=Area.all
+    @area_names=[]
+    @area.each do |area|
+      @area_names.push(area.name)
+    end
+    @category=Category.all
+    @category_names=[]
+    @category.each do |category|
+      @category_names.push(category.name)
+    end
+    @sub_category=Category.all
+    @sub_category_names=[]
+    @sub_category.each do |sub_category|
+      @sub_category_names.push(sub_category.name)
+    end
+
+   end
   end
 end

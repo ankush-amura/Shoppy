@@ -1,5 +1,7 @@
 {
   "name": "ShopReg",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "backbone.marionette": "^3.4.3"
+  }
 }
