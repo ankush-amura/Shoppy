@@ -21205,3 +21205,415 @@ MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.000434798s
 Completed 200 OK in 180ms (Views: 174.7ms)
 
 
+Started GET "/customers/" for 127.0.0.1 at 2017-09-19 16:27:31 +0530
+Processing by CustomersController#index as HTML
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('59b62270d838e407d0e3fda9')}, "limit"=>-1, "sort"=>{"_id"=>1}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.00070002s
+  Rendering customers/index.html.erb within layouts/application
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"shops", "filter"=>{}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.000419673s
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"cities", "filter"=>{"_id"=>BSON::ObjectId('59b25765d838e47a65286466')}, "limit"=>-1, "sort"=>{"_id"=>1}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.000759321s
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"areas", "filter"=>{"_id"=>BSON::ObjectId('59b259a9d838e47a65286468')}, "limit"=>-1, "sort"=>{"_id"=>1}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.0010156420000000002s
+MONGODB | localhost:27017 | shop_reg_development.count | STARTED | {"count"=>"shops", "query"=>{}}
+MONGODB | localhost:27017 | shop_reg_development.count | SUCCEEDED | 0.00042852300000000004s
+  Rendered customers/index.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 174ms (Views: 168.5ms)
+
+
+Started GET "/customers" for 127.0.0.1 at 2017-09-19 16:27:37 +0530
+Processing by CustomersController#index as HTML
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('59b62270d838e407d0e3fda9')}, "limit"=>-1, "sort"=>{"_id"=>1}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.000660022s
+  Rendering customers/index.html.erb within layouts/application
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"shops", "filter"=>{}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.000547808s
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"cities", "filter"=>{"_id"=>BSON::ObjectId('59b25765d838e47a65286466')}, "limit"=>-1, "sort"=>{"_id"=>1}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.001293702s
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"areas", "filter"=>{"_id"=>BSON::ObjectId('59b259a9d838e47a65286468')}, "limit"=>-1, "sort"=>{"_id"=>1}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.000483061s
+MONGODB | localhost:27017 | shop_reg_development.count | STARTED | {"count"=>"shops", "query"=>{}}
+MONGODB | localhost:27017 | shop_reg_development.count | SUCCEEDED | 0.000551179s
+  Rendered customers/index.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 59ms (Views: 56.2ms)
+
+
+Started GET "/customers" for 127.0.0.1 at 2017-09-19 16:27:40 +0530
+Processing by CustomersController#index as HTML
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('59b62270d838e407d0e3fda9')}, "limit"=>-1, "sort"=>{"_id"=>1}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.0012667s
+  Rendering customers/index.html.erb within layouts/application
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"shops", "filter"=>{}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.000483988s
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"cities", "filter"=>{"_id"=>BSON::ObjectId('59b25765d838e47a65286466')}, "limit"=>-1, "sort"=>{"_id"=>1}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.0007215240000000001s
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"areas", "filter"=>{"_id"=>BSON::ObjectId('59b259a9d838e47a65286468')}, "limit"=>-1, "sort"=>{"_id"=>1}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.0007756s
+MONGODB | localhost:27017 | shop_reg_development.count | STARTED | {"count"=>"shops", "query"=>{}}
+MONGODB | localhost:27017 | shop_reg_development.count | SUCCEEDED | 0.000367342s
+  Rendered customers/index.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 68ms (Views: 63.5ms)
+
+
+Started GET "/customers/search" for 127.0.0.1 at 2017-09-19 16:27:44 +0530
+Processing by CustomersController#search as HTML
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('59b62270d838e407d0e3fda9')}, "limit"=>-1, "sort"=>{"_id"=>1}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.000736957s
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"cities", "filter"=>{}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.000428353s
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"areas", "filter"=>{}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.000423401s
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"categories", "filter"=>{}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.000557762s
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"categories", "filter"=>{}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.000529505s
+  Rendering customers/search.html.erb within layouts/application
+  Rendered customers/search.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 49ms (Views: 38.8ms)
+
+
+Started GET "/customers/search" for 127.0.0.1 at 2017-09-19 16:27:46 +0530
+Processing by CustomersController#search as HTML
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('59b62270d838e407d0e3fda9')}, "limit"=>-1, "sort"=>{"_id"=>1}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.000747773s
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"cities", "filter"=>{}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.000821078s
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"areas", "filter"=>{}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.000589572s
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"categories", "filter"=>{}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.000745087s
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"categories", "filter"=>{}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.0005776619999999999s
+  Rendering customers/search.html.erb within layouts/application
+  Rendered customers/search.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 60ms (Views: 43.2ms)
+
+
+Started GET "/customers" for 127.0.0.1 at 2017-09-19 16:27:48 +0530
+Processing by CustomersController#index as HTML
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('59b62270d838e407d0e3fda9')}, "limit"=>-1, "sort"=>{"_id"=>1}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.000644222s
+  Rendering customers/index.html.erb within layouts/application
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"shops", "filter"=>{}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.000600473s
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"cities", "filter"=>{"_id"=>BSON::ObjectId('59b25765d838e47a65286466')}, "limit"=>-1, "sort"=>{"_id"=>1}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.001154361s
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"areas", "filter"=>{"_id"=>BSON::ObjectId('59b259a9d838e47a65286468')}, "limit"=>-1, "sort"=>{"_id"=>1}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.0005918879999999999s
+MONGODB | localhost:27017 | shop_reg_development.count | STARTED | {"count"=>"shops", "query"=>{}}
+MONGODB | localhost:27017 | shop_reg_development.count | SUCCEEDED | 0.000575153s
+  Rendered customers/index.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 59ms (Views: 55.1ms)
+
+
+Started GET "/customers" for 127.0.0.1 at 2017-09-19 16:27:53 +0530
+Processing by CustomersController#index as HTML
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('59b62270d838e407d0e3fda9')}, "limit"=>-1, "sort"=>{"_id"=>1}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.000755962s
+  Rendering customers/index.html.erb within layouts/application
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"shops", "filter"=>{}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.000769661s
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"cities", "filter"=>{"_id"=>BSON::ObjectId('59b25765d838e47a65286466')}, "limit"=>-1, "sort"=>{"_id"=>1}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.000712421s
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"areas", "filter"=>{"_id"=>BSON::ObjectId('59b259a9d838e47a65286468')}, "limit"=>-1, "sort"=>{"_id"=>1}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.0005179879999999999s
+MONGODB | localhost:27017 | shop_reg_development.count | STARTED | {"count"=>"shops", "query"=>{}}
+MONGODB | localhost:27017 | shop_reg_development.count | SUCCEEDED | 0.000477774s
+  Rendered customers/index.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 56ms (Views: 50.5ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-09-19 16:30:37 +0530
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"UGRaEp2xweKwdqoWrWBG2PWa1MUsr2dy+7cN+emUiw+X+5BnM//4+Ud+HVgDr5W+o8pT9wMjOLskz/sxfxZVVQ=="}
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('59b62270d838e407d0e3fda9')}, "limit"=>-1, "sort"=>{"_id"=>1}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.0006284750000000001s
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-19 16:30:37 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 174ms (Views: 172.5ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-09-19 16:30:46 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OF507dyRFppAH/blu2mUopftWLUYs1bnvgf7dmOl8fC+di4Rnc/YDX2842CqaQON1tx/mhlvlGqMzAbaHQp7dg==", "user"=>{"email"=>"ankushkhurana34@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"ankushkhurana34@gmail.com"}, "limit"=>-1, "sort"=>{"_id"=>1}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.0018012969999999999s
+MONGODB | localhost:27017 | shop_reg_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('59b2552dd838e47a65286462')}, "u"=>{"$set"=>{"last_sign_in_at"=>2017-09-19 10:27:13 UTC, "current_sign_in_at"=>2017-09-19 11:00:46 UTC, "sign_in_count"=>15, "updated_at"=>2017-09-19 11:00:46...
+MONGODB | localhost:27017 | shop_reg_development.update | SUCCEEDED | 0.000661981s
+Redirected to http://localhost:3000/moderators
+Completed 302 Found in 195ms
+
+
+Started GET "/moderators" for 127.0.0.1 at 2017-09-19 16:30:46 +0530
+Processing by ModeratorsController#index as HTML
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('59b2552dd838e47a65286462')}, "limit"=>-1, "sort"=>{"_id"=>1}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.000473115s
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"users", "filter"=>{"moderator_id"=>BSON::ObjectId('59b2552dd838e47a65286462')}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.000366266s
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"shops", "filter"=>{"user_id"=>BSON::ObjectId('59b267d2d838e4086fa2d2b1')}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.000550044s
+  Rendering moderators/index.html.erb within layouts/application
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('59b267d2d838e4086fa2d2b1')}, "limit"=>-1, "sort"=>{"_id"=>1}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.000517015s
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"cities", "filter"=>{"_id"=>BSON::ObjectId('59b25765d838e47a65286466')}, "limit"=>-1, "sort"=>{"_id"=>1}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.000836294s
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"areas", "filter"=>{"_id"=>BSON::ObjectId('59b259a9d838e47a65286468')}, "limit"=>-1, "sort"=>{"_id"=>1}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.0005430309999999999s
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"categories", "filter"=>{"_id"=>BSON::ObjectId('59b24b5ed838e47530286465')}, "limit"=>-1, "sort"=>{"_id"=>1}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.000505367s
+  Rendered moderators/index.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 59ms (Views: 54.3ms)
+
+
+Started GET "/moderators/new" for 127.0.0.1 at 2017-09-19 16:30:49 +0530
+Processing by ModeratorsController#new as HTML
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('59b2552dd838e47a65286462')}, "limit"=>-1, "sort"=>{"_id"=>1}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.000699937s
+  Rendering moderators/new.html.erb within layouts/application
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"users", "filter"=>{"role"=>"Sale", "moderator_id"=>nil}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.00045479s
+  Rendered moderators/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 49ms (Views: 45.2ms)
+
+
+Started GET "/moderators/new" for 127.0.0.1 at 2017-09-19 16:30:51 +0530
+Processing by ModeratorsController#new as HTML
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('59b2552dd838e47a65286462')}, "limit"=>-1, "sort"=>{"_id"=>1}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.009038313s
+  Rendering moderators/new.html.erb within layouts/application
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"users", "filter"=>{"role"=>"Sale", "moderator_id"=>nil}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.000638286s
+  Rendered moderators/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 58ms (Views: 44.6ms)
+
+
+Started GET "/moderators" for 127.0.0.1 at 2017-09-19 16:30:55 +0530
+Processing by ModeratorsController#index as HTML
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('59b2552dd838e47a65286462')}, "limit"=>-1, "sort"=>{"_id"=>1}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.0008669460000000001s
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"users", "filter"=>{"moderator_id"=>BSON::ObjectId('59b2552dd838e47a65286462')}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.001009632s
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"shops", "filter"=>{"user_id"=>BSON::ObjectId('59b267d2d838e4086fa2d2b1')}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.001129891s
+  Rendering moderators/index.html.erb within layouts/application
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('59b267d2d838e4086fa2d2b1')}, "limit"=>-1, "sort"=>{"_id"=>1}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.0008553520000000001s
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"cities", "filter"=>{"_id"=>BSON::ObjectId('59b25765d838e47a65286466')}, "limit"=>-1, "sort"=>{"_id"=>1}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.001024855s
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"areas", "filter"=>{"_id"=>BSON::ObjectId('59b259a9d838e47a65286468')}, "limit"=>-1, "sort"=>{"_id"=>1}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.0006817s
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"categories", "filter"=>{"_id"=>BSON::ObjectId('59b24b5ed838e47530286465')}, "limit"=>-1, "sort"=>{"_id"=>1}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.001731506s
+  Rendered moderators/index.html.erb within layouts/application (15.8ms)
+Completed 200 OK in 71ms (Views: 60.4ms)
+
+
+Started GET "/moderators/delsale" for 127.0.0.1 at 2017-09-19 16:30:57 +0530
+Processing by ModeratorsController#delsale as HTML
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('59b2552dd838e47a65286462')}, "limit"=>-1, "sort"=>{"_id"=>1}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.001312024s
+  Rendering moderators/delsale.html.erb within layouts/application
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"users", "filter"=>{"moderator_id"=>BSON::ObjectId('59b2552dd838e47a65286462')}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.000708801s
+  Rendered moderators/delsale.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 51ms (Views: 46.0ms)
+
+
+Started GET "/moderators/delsale" for 127.0.0.1 at 2017-09-19 16:31:00 +0530
+Processing by ModeratorsController#delsale as HTML
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('59b2552dd838e47a65286462')}, "limit"=>-1, "sort"=>{"_id"=>1}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.0005633890000000001s
+  Rendering moderators/delsale.html.erb within layouts/application
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"users", "filter"=>{"moderator_id"=>BSON::ObjectId('59b2552dd838e47a65286462')}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.000640935s
+  Rendered moderators/delsale.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 54ms (Views: 50.2ms)
+
+
+Started GET "/moderators" for 127.0.0.1 at 2017-09-19 16:31:03 +0530
+Processing by ModeratorsController#index as HTML
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('59b2552dd838e47a65286462')}, "limit"=>-1, "sort"=>{"_id"=>1}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.00078973s
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"users", "filter"=>{"moderator_id"=>BSON::ObjectId('59b2552dd838e47a65286462')}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.0005453190000000001s
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"shops", "filter"=>{"user_id"=>BSON::ObjectId('59b267d2d838e4086fa2d2b1')}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.000688689s
+  Rendering moderators/index.html.erb within layouts/application
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('59b267d2d838e4086fa2d2b1')}, "limit"=>-1, "sort"=>{"_id"=>1}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.000673434s
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"cities", "filter"=>{"_id"=>BSON::ObjectId('59b25765d838e47a65286466')}, "limit"=>-1, "sort"=>{"_id"=>1}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.00050544s
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"areas", "filter"=>{"_id"=>BSON::ObjectId('59b259a9d838e47a65286468')}, "limit"=>-1, "sort"=>{"_id"=>1}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.000443762s
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"categories", "filter"=>{"_id"=>BSON::ObjectId('59b24b5ed838e47530286465')}, "limit"=>-1, "sort"=>{"_id"=>1}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.000445108s
+  Rendered moderators/index.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 69ms (Views: 62.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-09-19 16:31:31 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OF507dyRFppAH/blu2mUopftWLUYs1bnvgf7dmOl8fC+di4Rnc/YDX2842CqaQON1tx/mhlvlGqMzAbaHQp7dg==", "user"=>{"email"=>"saly@123", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('59b2552dd838e47a65286462')}, "limit"=>-1, "sort"=>{"_id"=>1}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.000929816s
+Redirected to http://localhost:3000/moderators
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 5ms
+
+
+Started GET "/moderators" for 127.0.0.1 at 2017-09-19 16:31:31 +0530
+Processing by ModeratorsController#index as HTML
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('59b2552dd838e47a65286462')}, "limit"=>-1, "sort"=>{"_id"=>1}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.0006415300000000001s
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"users", "filter"=>{"moderator_id"=>BSON::ObjectId('59b2552dd838e47a65286462')}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.000503431s
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"shops", "filter"=>{"user_id"=>BSON::ObjectId('59b267d2d838e4086fa2d2b1')}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.000546778s
+  Rendering moderators/index.html.erb within layouts/application
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('59b267d2d838e4086fa2d2b1')}, "limit"=>-1, "sort"=>{"_id"=>1}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.000984623s
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"cities", "filter"=>{"_id"=>BSON::ObjectId('59b25765d838e47a65286466')}, "limit"=>-1, "sort"=>{"_id"=>1}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.0013130449999999999s
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"areas", "filter"=>{"_id"=>BSON::ObjectId('59b259a9d838e47a65286468')}, "limit"=>-1, "sort"=>{"_id"=>1}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.00042662600000000005s
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"categories", "filter"=>{"_id"=>BSON::ObjectId('59b24b5ed838e47530286465')}, "limit"=>-1, "sort"=>{"_id"=>1}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.000561615s
+  Rendered moderators/index.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 58ms (Views: 52.6ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-09-19 16:32:29 +0530
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"yTNl2frAIq3PCGCope5AxVDPPAvfCyijM0HRRXI8IyXokHvxtYQZB5i0Nf20O5AkZOlFXhXowb5ELT9slf7p8Q=="}
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('59b2552dd838e47a65286462')}, "limit"=>-1, "sort"=>{"_id"=>1}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.000610326s
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-19 16:32:29 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 48ms (Views: 46.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-09-19 16:32:58 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"faABrWB9KnnQc70suKdlfX6vmm0pk6x8DbfKRxPwTmzEU/P03pLfBoD08oiU72gbIgXrBR2ZbguAQZPTMkmHHQ==", "user"=>{"email"=>"james@123", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"james@123"}, "limit"=>-1, "sort"=>{"_id"=>1}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.000525999s
+Completed 401 Unauthorized in 3ms
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"faABrWB9KnnQc70suKdlfX6vmm0pk6x8DbfKRxPwTmzEU/P03pLfBoD08oiU72gbIgXrBR2ZbguAQZPTMkmHHQ==", "user"=>{"email"=>"james@123", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 230ms (Views: 45.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-09-19 16:34:30 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SD8oYZbSq/cvmgEdehtx3/8SPDHkcK0Le5nhBVWfvBzxzNo4KD1eiH8dTrlWU3y5o7hNWdB6b3z2b7iRdCZ1bQ==", "user"=>{"email"=>"gems@123", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"users", "filter"=>{"email"=>"gems@123"}, "limit"=>-1, "sort"=>{"_id"=>1}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.000764343s
+MONGODB | localhost:27017 | shop_reg_development.update | STARTED | {"update"=>"users", "updates"=>[{"q"=>{"_id"=>BSON::ObjectId('59c0bf90d838e43d0bc5eaf0')}, "u"=>{"$set"=>{"current_sign_in_at"=>2017-09-19 11:04:30 UTC, "sign_in_count"=>2, "updated_at"=>2017-09-19 11:04:30 UTC}}, "multi"=>false, "upsert"=>false}], "o...
+MONGODB | localhost:27017 | shop_reg_development.update | SUCCEEDED | 0.000449831s
+Redirected to http://localhost:3000/superadmins
+Completed 302 Found in 199ms
+
+
+Started GET "/superadmins" for 127.0.0.1 at 2017-09-19 16:34:30 +0530
+Processing by SuperadminsController#index as HTML
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('59c0bf90d838e43d0bc5eaf0')}, "limit"=>-1, "sort"=>{"_id"=>1}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.000536643s
+  Rendering superadmins/index.html.erb within layouts/application
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"users", "filter"=>{"superadmin_id"=>BSON::ObjectId('59c0bf90d838e43d0bc5eaf0')}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.000890953s
+  Rendered superadmins/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 53ms (Views: 49.6ms)
+
+
+Started GET "/superadmins/new" for 127.0.0.1 at 2017-09-19 16:34:33 +0530
+Processing by SuperadminsController#new as HTML
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('59c0bf90d838e43d0bc5eaf0')}, "limit"=>-1, "sort"=>{"_id"=>1}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.000860119s
+  Rendering superadmins/new.html.erb within layouts/application
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"users", "filter"=>{"role"=>"Moderator", "superadmin_id"=>nil}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.00080209s
+  Rendered superadmins/new.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 49ms (Views: 45.1ms)
+
+
+Started GET "/superadmins/new" for 127.0.0.1 at 2017-09-19 16:34:36 +0530
+Processing by SuperadminsController#new as HTML
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('59c0bf90d838e43d0bc5eaf0')}, "limit"=>-1, "sort"=>{"_id"=>1}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.000599534s
+  Rendering superadmins/new.html.erb within layouts/application
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"users", "filter"=>{"role"=>"Moderator", "superadmin_id"=>nil}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.002189506s
+  Rendered superadmins/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 54ms (Views: 50.7ms)
+
+
+Started GET "/superadmins" for 127.0.0.1 at 2017-09-19 16:34:40 +0530
+Processing by SuperadminsController#index as HTML
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('59c0bf90d838e43d0bc5eaf0')}, "limit"=>-1, "sort"=>{"_id"=>1}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.001280561s
+  Rendering superadmins/index.html.erb within layouts/application
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"users", "filter"=>{"superadmin_id"=>BSON::ObjectId('59c0bf90d838e43d0bc5eaf0')}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.0008467220000000001s
+  Rendered superadmins/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 61ms (Views: 56.4ms)
+
+
+Started GET "/superadmins/delmod" for 127.0.0.1 at 2017-09-19 16:34:42 +0530
+Processing by SuperadminsController#delmod as HTML
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('59c0bf90d838e43d0bc5eaf0')}, "limit"=>-1, "sort"=>{"_id"=>1}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.000564553s
+  Rendering superadmins/delmod.html.erb within layouts/application
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"users", "filter"=>{"superadmin_id"=>BSON::ObjectId('59c0bf90d838e43d0bc5eaf0')}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.000868361s
+  Rendered superadmins/delmod.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 54ms (Views: 50.5ms)
+
+
+Started GET "/superadmins/delmod" for 127.0.0.1 at 2017-09-19 16:34:43 +0530
+Processing by SuperadminsController#delmod as HTML
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('59c0bf90d838e43d0bc5eaf0')}, "limit"=>-1, "sort"=>{"_id"=>1}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.00100863s
+  Rendering superadmins/delmod.html.erb within layouts/application
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"users", "filter"=>{"superadmin_id"=>BSON::ObjectId('59c0bf90d838e43d0bc5eaf0')}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.000510034s
+  Rendered superadmins/delmod.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 53ms (Views: 48.0ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-09-19 16:34:47 +0530
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"8dfKD0k9bYc9Jml8z8g18u5FctBf52l5E2U+St93hkUaf24frrsa20tQ2mCXCsLnczph7OXntC3oDhp25mI9dg=="}
+MONGODB | localhost:27017 | shop_reg_development.find | STARTED | {"find"=>"users", "filter"=>{"_id"=>BSON::ObjectId('59c0bf90d838e43d0bc5eaf0')}, "limit"=>-1, "sort"=>{"_id"=>1}}
+MONGODB | localhost:27017 | shop_reg_development.find | SUCCEEDED | 0.000872895s
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms
+
+
+Started GET "/" for 127.0.0.1 at 2017-09-19 16:34:47 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 50ms (Views: 48.8ms)
+
+

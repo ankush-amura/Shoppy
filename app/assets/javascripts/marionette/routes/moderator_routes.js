@@ -1,10 +1,4 @@
-var MyController = Marionette.Controller.extend({
-  index: function() {console.log('***************In Moderator Index function*******************')},
-  new: function(){console.log('******************In Moderator new Method*************************')},
-  delsale: function(){console.log('*****************In Moderator Del Sale Method*****************')}
-});
-
-var myController = new MyController()
+var myController = new moderators_controller()
 
 ModeratorRouter = Mn.AppRouter.extend({
   controller: myController,
