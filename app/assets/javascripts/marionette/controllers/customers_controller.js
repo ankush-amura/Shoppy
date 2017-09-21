@@ -1,11 +1,10 @@
 customers_controller = Marionette.Controller.extend({
   index: function() {
-    customers = new Customer();
+    customers = new Customers();
     customers.fetch().done(function() {
       console.log(customers.fetch())
-    var customer_view = new customerLayout({model: customers});
+    var customer_view = new customerCollection({collection: customers});
     $('body').html(customer_view.render().$el);
-    customer_view.showChildView('index',new customerIndex({model: customers}));
     customer_view.on("something:do:it", function(args){
         console.log("inside click event")
         console.log(args.view) // => the view instance that triggered the event

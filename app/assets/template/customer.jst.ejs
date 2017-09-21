@@ -1,23 +1,12 @@
 <fieldset>
   <legend>All Shops Confirming Your Search</legend>
 	<table class="table">
-    <tr>
-      <th class="do-something">Shop name &nbsp&nbsp&nbsp</th>
-      <th>Shop city  &nbsp&nbsp&nbsp</th>
-      <th>Shop Area  &nbsp&nbsp&nbsp</th>
-      <th>Shop created at  &nbsp&nbsp&nbsp</th>
-      <th>Shop Updated At &nbsp&nbsp&nbsp</th>
-      <th>Comment For Shop &nbsp&nbsp&nbsp</th>
-    </tr>
-
-		<% _.each(customers, function(shop){ %>
-      <tr>
-        <td><%= shop.name%> &nbsp&nbsp&nbsp</td>
-        <td><%= shop.city%> &nbsp&nbsp&nbsp</td>
-        <td><%= shop.area%> &nbsp&nbsp&nbsp</td>
-        <td><%= shop.created_at %>  &nbsp&nbsp&nbsp</td>
-        <td><%= shop.updated_at %> &nbsp&nbsp&nbsp</td>
+		  <tr>
+        <td><%= customers.name%> &nbsp&nbsp&nbsp</td>
+        <td><%= customers.city%> &nbsp&nbsp&nbsp</td>
+        <td><%= customers.area%> &nbsp&nbsp&nbsp</td>
+        <td><%= customers.created_at %>  &nbsp&nbsp&nbsp</td>
+        <td><%= customers.updated_at %> &nbsp&nbsp&nbsp</td>
       </td>
-		<% }) %>
 	</table>
 </fieldset>

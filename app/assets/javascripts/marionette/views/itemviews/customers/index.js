@@ -1,4 +1,4 @@
-customerIndex = Marionette  .ItemView.extend({
+customerIndex = Marionette.ItemView.extend({
   template: JST['customer'],
   serializeData: function() {
     return {

@@ -15,10 +15,12 @@
 //= require backbone
 //= require backbone.marionette
 //= require_directory ./backbone_defaults/models
-//= require_directory ./marionette/views
 //= require_directory ./marionette/controllers
 //= require_directory ./marionette/routes
 //= require_tree ../template/
+//= require_tree      ./marionette/views/layoutViews
+//= require_tree      ./marionette/views/itemviews
+//= require_tree      ./marionette/views/collectionView
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
