@@ -1,5 +1,5 @@
 Superadmin = Backbone.Model.extend({
-  url: '/superadmins'
+  urlRoot: '/superadmins'
 });
 
 Superadmins = Backbone.Collection.extend({

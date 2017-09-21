@@ -12,8 +12,13 @@
 //
 //= require jquery-3.2.1
 //= require underscore
-//= require backbone  
+//= require backbone
 //= require backbone.marionette
+//= require_directory ./backbone_defaults/models
+//= require_directory ./marionette/views
+//= require_directory ./marionette/controllers
+//= require_directory ./marionette/routes
+//= require_tree ../template/
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .

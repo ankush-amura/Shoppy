@@ -1,5 +1,5 @@
 Sale = Backbone.Model.extend({
-  url: '/sales'
+  urlRoot: '/sales'
 });
 
 Sales = Backbone.Collection.extend({

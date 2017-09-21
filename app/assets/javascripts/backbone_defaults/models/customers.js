@@ -1,11 +1,6 @@
 Customer = Backbone.Model.extend({
-//  urlRoot: '/customers',
-
-   url:  function(){
-     return `/customers/${this.id}`
-   }
-
-});
+   urlRoot: '/customers'
+ });
 
 Customers = Backbone.Collection.extend({
   model: Customer,
