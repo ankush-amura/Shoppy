@@ -3,7 +3,7 @@ customers_controller = Marionette.Controller.extend({
     customers = new Customers();
     customers.fetch().done(function() {
       console.log(customers.fetch())
-    var customer_view = new customerCollection({collection: customers});
+    var customer_view = new CustomerTableView({collection: customers});
     $('body').html(customer_view.render().$el);
     customer_view.on("something:do:it", function(args){
         console.log("inside click event")
