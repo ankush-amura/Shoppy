@@ -1,10 +1,12 @@
-customerIndex = Marionette.ItemView.extend({
-  template: JST['customer'],
+moderatorSales = Marionette.ItemView.extend({
+  template: JST['moderatorSales'],
+  tagName: 'tr',
   serializeData: function() {
     return {
-  		'customers' : this.model.attributes
+  		'sales' : this.model.attributes
     }
   },
+
   onBeforeRender: function() {
      console.log("i am in Pre render function ItemView")
       // set up final bits just before rendering the view's `el`
@@ -21,10 +23,4 @@ customerIndex = Marionette.ItemView.extend({
   onDomRefresh: function() {
      console.log('In dom:refresh For ItemView');
    },
-   events: {
-        "click #comment":  function(args){
-            Backbone.history.navigate('/customers/comment',{trigger:true})
-            console.log("inside click event")
-          }
-            },
 });

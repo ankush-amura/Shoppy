@@ -5,5 +5,5 @@ Customer = Backbone.Model.extend({
 Customers = Backbone.Collection.extend({
   model: Customer,
   urlRoot: '/customers',
-  url: '/customers'
+  // url: '/customers'
 });

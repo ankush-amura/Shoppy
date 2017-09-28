@@ -3,6 +3,9 @@ class ModeratorsController < ApplicationController
 
   def new
    @sales=User.where(role:"Sale",moderator_id: nil)
+   respond_to do |format|
+     format.json {render   json: @sales}
+   end
   end
 
   def edit
@@ -16,7 +19,21 @@ class ModeratorsController < ApplicationController
     end
   end
 
-
+  def shops
+    @moderator=current_user
+    # we get moderators that belongs to that superadmins
+    @sales= @moderator.sales
+    @shops=[]
+    @sales.each do |sale|
+          sale.shops.each do |shop|
+           @shops.push(shop)
+          end
+      end
+    respond_to do |format|
+       format.json{render json: @shops}
+       format.html{render 'index'}
+    end
+  end
   def index
     @moderator=current_user
     # we get moderators that belongs to that superadmins
@@ -37,7 +54,13 @@ class ModeratorsController < ApplicationController
      @moderator=current_user
      @sale=User.find(params[:id])
      @moderator.sales.push(@sale)
-     redirect_to(controller:"moderators",action:"index")
+    # redirect_to(controller:"moderators",action:"index")
+    respond_to do |format|
+      @response=[]
+      @response.push("Success Placing SalesPerson")
+     format.json { render json: @response }
+     format.html
+   end
   end
   # this action is responsible for running the creation of the new moderator by the superadmin
   def create
@@ -71,9 +94,15 @@ end
     # we see if a delete is pressed bcz on delete pressed we will get id in the link
     if params[:id]
       # deleting the particular sale person
-      Sale.find(params[:id]).destroy
+      User.find(params[:id]).destroy
       # redirecting to the delete page again after delete
-      redirect_to controller: "moderators" ,action:"delsale"
+      #redirect_to controller: "moderators" ,action:"delsale"
+      respond_to do |format|
+        @response=[]
+        @response.push("Success Deleting SalesPerson")
+       format.json { render json: @response }
+       format.html
+       end
     end
   end
 
