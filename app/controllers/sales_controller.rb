@@ -1,23 +1,30 @@
 class SalesController < ApplicationController
+  before_action :authenticate_user!
   def new
 
   end
 
+  def show
+    @sale=User.where(id: params[:id]).first
+    format.json {render   json: @sale}
+  end
 
   def newShop
   if request.post?
-    @shop=Shop.new(name: params[:name])
+     @shop=Shop.new(name: params[:name])
      city=City.where(name: params[:city]).first
      area=Area.where(name: params[:area]).first
      category=Category.where(name: params[:category]).first
-     sale=Sale.find('1')
+     sale=User.find(params[:id])
+     subcategory=Subcategory.where(name: params[:subcategory]).first
      sale.shops.push(@shop)
      city.shops.push(@shop)
      area.shops.push(@shop)
      category.shops.push(@shop)
-    redirect_to(sales_url)
+     subcategory.shops.push(@shop)
+     redirect_to(sales_url)
   end
- if request.get?
+  if request.get?
    @city_names=[]
    City.all.each do |city|
      @city_names.push(city.name)
@@ -27,17 +34,20 @@ class SalesController < ApplicationController
      @area_names.push(area.name)
    end
    @category_names=[]
-   Category.where(role:'Category').each do |category|
+   Category.each do |category|
       @category_names.push(category.name)
    end
+   @sub_category_names=[]
+   Subcategory.each do |subcategory|
+      @sub_category_names.push(subcategory.name)
+   end
+  end
  end
-end
 
 
   def index
-  session[:current_sales_person_id]=1
-  @sale=Sale.find(session[:current_sales_person_id])
-  @shops=@sale.shops
+   @sale=current_user
+   @shops=@sale.shops
   end
 
   def create
@@ -48,6 +58,7 @@ end
       redirect_to(controller: 'moderators' , action: 'index')
     end
   end
+
   def sale_params
     params.require(:sales).permit(:name,:email,:password,:contact)
   end
@@ -58,7 +69,7 @@ end
     @shop=Shop.where(id:params[:shop_id]).first
     @city=City.where(name:params[:city]).first
     @area=Area.where(name:params[:area]).first
-    @category=Category.where(name:params[:category],role:'Category').first
+    @category=Category.where(name:params[:category]).first
     @city.shops.push(@shop)
     @area.shops.push(@shop)
     @category.shops.push(@shop)
@@ -71,15 +82,22 @@ end
     City.all.each do |city|
     @city_names.push(city.name)
     end
+
     @area_names=[]
     Area.all.each do |area|
     @area_names.push(area.name)
     end
-    @categories=Category.where(role: "Category")
+
+    @categories=Category.all
     @category_names=[]
-     @categories.each do |category|
-     puts category.name
-     @category_names.push(category.name)
+    @categories.each do |category|
+    @category_names.push(category.name)
+    end
+
+    @sub_categories=Subcategory.all
+    @sub_category_names=[]
+    @sub_categories.each do |sub_category|
+    @sub_category_names.push(sub_category.name)
      end
      render('update')
    end

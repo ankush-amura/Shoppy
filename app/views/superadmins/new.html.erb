@@ -1,3 +1,36 @@
-<%= form_for :superadmin , url: superadmins_url   do |f| %>
-<%= render partial: "form" , locals: {f: f} %>
+
+<html>
+<fieldset>
+  <legend>Moderator Not Assigned Superadmin </legend>
+<table>
+<tr>
+  <th>Moderator Name &nbsp&nbsp&nbsp</th>
+  <th>Contact &nbsp&nbsp&nbsp</th>
+  <th>Email Id &nbsp&nbsp&nbsp</th>
+  <th> Created At  &nbsp&nbsp&nbsp</th>
+  <th> Updated At &nbsp&nbsp&nbsp</th>
+  <th> Assign Moderator &nbsp&nbsp&nbsp</th>
+</tr>
+<% @moderators.each do |moderator| %>
+<tr>
+  <td><%= moderator.name%></td>
+  <td><%= moderator.contact%> &nbsp&nbsp&nbsp</td>
+  <td><%= moderator.email%> &nbsp&nbsp&nbsp</td>
+  <td><%= moderator.created_at %>  &nbsp&nbsp&nbsp</td>
+  <td><%= moderator.updated_at %> &nbsp&nbsp&nbsp</td>
+  <td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= link_to "Assign" , controller: 'superadmins' , action: 'assign',id: moderator.id %>&nbsp&nbsp&nbsp</td>
+
+</tr>
 <% end %>
+</table>
+</fieldset>
+<% if user_signed_in? %>
+       <li>
+       <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+       </li>
+     <% else %>
+       <li>
+       <%= link_to('Login', new_user_session_path)  %>
+       </li>
+<% end %>
+</html>

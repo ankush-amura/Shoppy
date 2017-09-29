@@ -1,12 +1,23 @@
-class Shop < ApplicationRecord
+class Shop
 
-  # shop belongs to property as a table that acts as a refrence table for other models
-  belongs_to :property , polymorphic: true
+  include Mongoid::Document
+  include Mongoid::Timestamps
 
-  # each shop is said to have many reviews that are given by the customers
+
+  field :name,           type: String,default: ""
+  field :approve_status, type: String , default: '0'
+  belongs_to :city
+  belongs_to :area
+  belongs_to :user
+  belongs_to :category
+  belongs_to :subcategory
   has_many   :reviews
 
-  # validating name with attribute presence otherwise the shop is not inserted in table
+
+
+
+
+
   validates :name,      presence: true
 
 end

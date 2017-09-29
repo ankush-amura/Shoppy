@@ -1,4 +1,4 @@
-<%= form_for :sales , url:sales_newShop_url  do |f| %>
+<%= form_for :sales , url:newShop_sales_url  do |f| %>
 <fieldset>
   <legend>New Shop Desk</legend>
 <p>
@@ -19,6 +19,14 @@
 <p>
   <%= f.label "category:" %><br><br>
   <%= select_tag :category, options_for_select(@category_names) %>
+</p>
+
+<p>
+  <%= f.label "Sub category:" %><br><br>
+  <%= select_tag :subcategory, options_for_select(@sub_category_names) %>
+</p>
+<p>
+  <%= hidden_field_tag :id, current_user.id %>
 </p>
 
 <p>

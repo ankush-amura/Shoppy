@@ -1,3 +1,36 @@
-<%= form_for :moderator , url: moderators_url   do |f| %>
-<%= render partial: "form" , locals: {f: f} %>
+
+<html>
+<fieldset>
+  <legend>Sales Persons Not Assigned Moderator </legend>
+<table>
+<tr>
+  <th>Sales Name &nbsp&nbsp&nbsp</th>
+  <th>Contact &nbsp&nbsp&nbsp</th>
+  <th>Email Id &nbsp&nbsp&nbsp</th>
+  <th> Created At  &nbsp&nbsp&nbsp</th>
+  <th> Updated At &nbsp&nbsp&nbsp</th>
+  <th> Assign Sales Person  &nbsp&nbsp&nbsp</th>
+</tr>
+<% @sales.each do |sale| %>
+<tr>
+  <td><%= sale.name%></td>
+  <td><%= sale.contact%> &nbsp&nbsp&nbsp</td>
+  <td><%= sale.email%> &nbsp&nbsp&nbsp</td>
+  <td><%= sale.created_at %>  &nbsp&nbsp&nbsp</td>
+  <td><%= sale.updated_at %> &nbsp&nbsp&nbsp</td>
+  <td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= link_to "Assign" , controller: 'moderators' , action: 'assign',id: sale.id %>&nbsp&nbsp&nbsp</td>
+
+</tr>
 <% end %>
+</table>
+</fieldset>
+<% if user_signed_in? %>
+       <li>
+       <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+       </li>
+     <% else %>
+       <li>
+       <%= link_to('Login', new_user_session_path)  %>
+       </li>
+<% end %>
+</html>

@@ -1,0 +1,1 @@
+I"function(obj){var __p=[],print=function(){__p.push.apply(__p,arguments);};with(obj||{}){__p.push('<script id="layout-view-template" type="text/template">\n  <section>\n    <navigation id="menu">\n    <p>hello</p>\n    </navigation>\n  </section>\n</script>\n');}return __p.join('');}:ET
