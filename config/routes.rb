@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       get 'reject'
       get 'remove'
       get 'shops'
+      get 'search'
     end
   end
 

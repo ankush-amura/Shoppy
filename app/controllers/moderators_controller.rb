@@ -125,4 +125,17 @@ end
      @shop.save
      redirect_to(controller: 'moderators' , action: 'index')
    end
+
+   def search
+   respond_to do |format|
+     @moderator=current_user
+     # we get moderators that belongs to that superadmins
+     @sales= @moderator.sales
+     puts @sales
+     @sales_new = @sales.reject{|sale| !sale.name.include?(params['search'])}
+     puts @sales_new
+     format.json { render json: @sales_new }
+     format.html { 'index' }
+   end
+ end
 end

@@ -25,6 +25,22 @@ moderatorLayout = Marionette.LayoutView.extend({
    },
    "click .delete": function(){
      Backbone.history.navigate('/moderators/delsale',{trigger:true})
+   },
+   "keypress #search_box":function(){
+     $.ajax({
+      type: 'GET',
+      url: '/moderators/search',
+      data: { search : $('#search_box').val() },
+      dataType: 'json',
+      success: function(response) {
+        $('#search').text("");
+        console.log(response)
+        response.forEach(function(product) {
+           console.log(product)
+          $('#search').append('<option value="' + product.name + '">');
+        })
+      }
+    });
    }
  }
 });
